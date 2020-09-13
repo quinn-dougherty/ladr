@@ -10,8 +10,7 @@ Class Ring A :=
   rmult : A -> A -> A;
   rainv : A -> A;
   rminus : A -> A -> A;
-  req : A -> A -> Prop;
-  isring : ring_theory r0 r1 radd rmult rminus rainv req;
+  isring : ring_theory r0 r1 radd rmult rminus rainv eq;
   }.
 
 Class Field A `{Ring A} :=
@@ -37,7 +36,7 @@ Definition vectorspace_theory {F V : Type} `{Field F}
            (v0 : V) : Prop :=
   (forall (x y : V), vaddition x y = vaddition y x) /\
   (forall (x y z : V), vaddition (vaddition x y) z = vaddition x (vaddition y z)) /\
-  (exists z : V, forall (x : V), vaddition z x = x) /\
+  (forall (x : V), vaddition x v0 = x) /\
   (forall (x : V), exists (w : V), vaddition x w = v0) /\
   (forall (x : V), vscalar_mult r1 x = x) /\
   (forall (a : F) (x y : V), vscalar_mult a (vaddition x y) = vaddition (vscalar_mult a x) (vscalar_mult a y)) /\
@@ -66,6 +65,84 @@ Infix "⨥" := vaddition (at level 50) : vectorspace_scope.
 Infix "*" := vscalar_mult : vectorspace_scope.
 Notation "⨪" := vainv : vectorspace_scope.
 
+Ltac unpack_vectorspace H1 :=
+  destruct H1;
+  inversion isvectorspace0 as [H21 [H22 [H23 [H24 [H25 [H26 H27]]]]]].
+
+Ltac unpack_ring H :=
+  destruct H; inversion isring0.
+
+Ltac vby_definition H1 :=
+  unpack_vectorspace H1;
+  simpl;
+  easy.
+
+Lemma vaddition_assoc (u v w : V) : (u ⨥ v) ⨥ w = u ⨥ (v ⨥ w).
+Proof.
+  vby_definition H1.
+Qed.
+
+Lemma vaddition_commu (u v : V) : u ⨥ v = v ⨥ u.
+Proof.
+  vby_definition H1.
+Qed.
+
+Lemma vaddition_ident (v : V) : v ⨥ v0 = v.
+Proof.
+  vby_definition H1.
+Qed.
+
+Lemma vaddition_inverse (v : V) : exists (w : V), v ⨥ w = v0.
+Proof.
+  unpack_vectorspace H1.
+  specialize (H24 v).
+  destruct H24 as [w H24].
+  exists w.
+  easy.
+Qed.
+
+Lemma vmultiplicative_identity (v : V) : r1 * v = v.
+Proof.
+  vby_definition H1.
+Qed.
+
+Lemma vdistributive1 (a : F) (u v : V) : a * (u ⨥ v) = a * u ⨥ a * v.
+Proof.
+  vby_definition H1.
+Qed.
+
+Lemma vdistributive2 (a b : F) (v : V) : (a + b) * v = a * v ⨥ b * v.
+Proof.
+  vby_definition H1.
+Qed.
+
+Lemma radd_inv_zero (x : F) : x + rainv x = r0.
+Proof.
+  destruct H.
+  destruct isring0.
+  simpl.
+  rewrite (Ropp_def x).
+  reflexivity.
+Qed.
+
+Theorem zero_times_vector (v : V) :
+  r0 * v = v0.
+Proof.
+  simpl.
+  unpack_ring H.
+  rewrite <- (Radd_0_l r0).
+  simpl.
+Admitted.
+
+Lemma vadd_inverse_zero (v : V) : v ⨥ ⨪ v = v0.
+Proof.
+  unfold vainv.
+  rewrite <- vmultiplicative_identity with (v:=v) at 1.
+  rewrite <- vdistributive2 with (b:=rainv r1).
+  rewrite radd_inv_zero.
+  apply zero_times_vector.
+Qed.
+
 Lemma cancel_vadditive1 (u v : V) : u = v -> u ⨥ (⨪ u) = v ⨥ (⨪ u).
 Proof.
   intros H2.
@@ -73,7 +150,22 @@ Proof.
   reflexivity.
 Qed.
 
+Lemma add_v_to_both_sides1 (u v : V) : forall w, u = v -> w ⨥ u = w ⨥ v.
+Proof.
+  intros; subst; reflexivity.
+Qed.
 
+Lemma add_v_to_both_sides2 (u v : V) : forall w, w ⨥ u = w ⨥ v -> u = v.
+Proof.
+  intros.
+  apply add_v_to_both_sides1 with (w:= ⨪ w) in H2.
+  rewrite <- vaddition_assoc in H2.
+  rewrite vaddition_commu with (u:= ⨪ w)in H2.
+  simpl.
+Admitted.
+
+
+(*
 Lemma cancel_vadditive2 (u v w : V) : u ⨥ v = w -> u = w ⨥ (⨪ v).
 Proof.
   intros H2.
@@ -84,40 +176,40 @@ Proof.
   rewrite (H22 u v (⨪ v)).
   specialize (H24 v).
   destruct H24 as [minus_v' H24].
-
-  destruct (H24 (⨪ v)) as [w H24].
-
-  specialize (H24 (rainv r1 * v)).
-  destruct H24 as [w H24].
-  rewrite (H21 v (rainv r1 * v)).
-
-
+  assert (G : minus_v' = ⨪ v). give_up.
+  rewrite <- G.
   rewrite H24.
-
-
-
+  destruct H23 as [v0' H23].
+  specialize (H23 u).
+  rewrite (H21 u v1).
+  assert (G' : v0' = v1). give_up.
+  rewrite <- G'.
+  rewrite H23.
+  reflexivity.
 Admitted.
+*)
 
 
-
-
-Lemma addition_injective (v : V) : forall u w : V, v ⨥ u = v ⨥ w -> u = w.
+Lemma vaddition_injective (v : V) : forall u w : V, v ⨥ u = v ⨥ w -> u = w.
 Proof.
   intros u w H2.
-  apply cancel_vadditive1 in H2.
-  Admitted.
+  rewrite (add_v_to_both_sides2 u w v); easy.
+Qed.
 
-Theorem unique_vadditive_identity (v z' : V) : v ⨥ (⨪ v) = z' -> z' = v0.
+Theorem unique_vadditive_identity (v v0' : V) (H2 : forall u, u ⨥ v0' = u) : v0' = v0.
+Proof.
+  specialize (H2 v0).
+  rewrite <- H2.
+  rewrite vaddition_commu.
+  rewrite vaddition_ident.
+  reflexivity.
+Qed.
+
+Lemma unique_vadditive_identity' (v v0' : V) : v ⨥ (⨪ v) = v0' -> v0' = v0.
 Proof.
   intros H2.
   subst.
-  destruct H1.
-  inversion isvectorspace0 as [H21 [H22 [H23 [H24 [H25 [H26 H27]]]]]].
-  destruct H23 as [v0' H23].
-
 Admitted.
-
-
 
 Theorem unique_vadditive_inverse
         (*        (v z' : V) : v ⨥ ((- r1) * v) = z' -> v0 = z'. *)
@@ -126,15 +218,10 @@ Theorem unique_vadditive_inverse
 Proof.
   intros.
   rewrite <- H__w' in H__w.
-  apply addition_injective in H__w.
+  apply vaddition_injective in H__w.
   apply H__w.
 Qed.
 
-
-Theorem zero_times_vector (v : V) :
-  r0 * v = v0.
-Proof.
-Admitted.
 
 Theorem number_times_zero (a : F) :
   a * v0 = v0.
