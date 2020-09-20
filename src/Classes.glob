@@ -1,340 +1,729 @@
-DIGEST 0014fcbc8be390ef84a719e3ffd6778f
+DIGEST 37e88515cd789a642d1e77af03a014ca
 FClasses
 R15:18 Coq.setoid_ring.Ring <> <> lib
 R36:40 Coq.setoid_ring.Field <> <> lib
-sec 52:53 <> VS
-rec 62:65 <> Ring
-proj 78:79 <> r0
-proj 88:89 <> r1
-proj 98:101 <> radd
-proj 120:124 <> rmult
-proj 143:147 <> rainv
-proj 161:166 <> rminus
-proj 185:187 <> req
-proj 209:214 <> isring
-binder 67:67 <> A:1
-R83:83 Classes <> A:1 var
-R93:93 Classes <> A:1 var
-R106:109 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R111:114 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R115:115 Classes <> A:1 var
-R110:110 Classes <> A:1 var
-R105:105 Classes <> A:1 var
-R129:132 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R134:137 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R138:138 Classes <> A:1 var
-R133:133 Classes <> A:1 var
-R128:128 Classes <> A:1 var
-R152:155 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R156:156 Classes <> A:1 var
-R151:151 Classes <> A:1 var
-R171:174 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R176:179 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R180:180 Classes <> A:1 var
-R175:175 Classes <> A:1 var
-R170:170 Classes <> A:1 var
-R192:195 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R197:200 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R196:196 Classes <> A:1 var
-R191:191 Classes <> A:1 var
-R218:228 Coq.setoid_ring.Ring_theory <> ring_theory rec
-R260:262 Classes <> req:9 meth
-R254:258 Classes <> rainv:7 meth
-R247:252 Classes <> rminus:8 meth
-R241:245 Classes <> rmult:6 meth
-R236:239 Classes <> radd:5 meth
-R233:234 Classes <> r1:4 meth
-R230:231 Classes <> r0:3 meth
-rec 277:281 <> Field
-proj 304:307 <> fdiv
-proj 326:329 <> finv
-proj 343:349 <> isfield
-binder 283:283 <> A:11
-R287:290 Classes <> Ring class
-R292:292 Classes <> A:11 var
-binder 287:292 <> H:12
-R312:315 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R317:320 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R321:321 Classes <> A:11 var
-R316:316 Classes <> A:11 var
-R311:311 Classes <> A:11 var
-R334:337 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R338:338 Classes <> A:11 var
-R333:333 Classes <> A:11 var
-R353:364 Coq.setoid_ring.Field_theory <> field_theory rec
-R406:407 Coq.Init.Logic <> eq ind
-R401:404 Classes <> finv:15 meth
-R396:399 Classes <> fdiv:14 meth
-R390:394 Classes <> rainv meth
-R383:388 Classes <> rminus meth
-R377:381 Classes <> rmult meth
-R372:375 Classes <> radd meth
-R369:370 Classes <> r1 meth
-R366:367 Classes <> r0 meth
-R555:558 Classes <> radd meth
-not 548:548 VS ::field_scope:x_'+'_x
-R588:592 Classes <> rmult meth
-not 581:581 VS ::field_scope:x_'*'_x
-R627:631 Classes <> rainv meth
-not 618:618 VS ::field_scope:'-'_x
-R666:669 Classes <> finv meth
-not 657:657 VS ::field_scope:'/'_x
-R699:702 Classes <> fdiv meth
-not 692:692 VS ::field_scope:x_'/'_x
-def 731:748 <> vectorspace_theory
-binder 751:751 <> F:17
-binder 753:753 <> V:18
-R765:769 Classes <> Field class
-R771:771 Classes <> F:17 var
-binder 765:771 <> H0:20
-R802:805 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R807:810 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R811:811 Classes <> V:18 var
-R806:806 Classes <> V:18 var
-R801:801 Classes <> F:17 var
-binder 786:797 <> vscalar_mult:21
-R839:842 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R844:847 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R848:848 Classes <> V:18 var
-R843:843 Classes <> V:18 var
-R838:838 Classes <> V:18 var
-binder 826:834 <> vaddition:22
-R868:868 Classes <> V:18 var
-binder 863:864 <> v0:23
-R883:883 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R931:937 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R898:898 Classes <> V:18 var
-binder 892:892 <> x:24
-binder 894:894 <> y:25
-R915:917 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R902:910 Classes <> vaddition:22 var
-R914:914 Classes <> y:25 var
-R912:912 Classes <> x:24 var
-R918:926 Classes <> vaddition:22 var
-R930:930 Classes <> x:24 var
-R928:928 Classes <> y:25 var
-R938:938 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1016:1022 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R955:955 Classes <> V:18 var
-binder 947:947 <> x:26
-binder 949:949 <> y:27
-binder 951:951 <> z:28
-R986:988 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R959:967 Classes <> vaddition:22 var
-R985:985 Classes <> z:28 var
-R970:978 Classes <> vaddition:22 var
-R982:982 Classes <> y:27 var
-R980:980 Classes <> x:26 var
-R989:997 Classes <> vaddition:22 var
-R1002:1010 Classes <> vaddition:22 var
-R1014:1014 Classes <> z:28 var
-R1012:1012 Classes <> y:27 var
-R999:999 Classes <> x:26 var
-R1023:1023 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1071:1077 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1024:1030 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R1036:1037 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R1035:1035 Classes <> V:18 var
-binder 1031:1031 <> z:29
-R1050:1050 Classes <> V:18 var
-binder 1046:1046 <> x:30
-R1067:1069 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1054:1062 Classes <> vaddition:22 var
-R1066:1066 Classes <> x:30 var
-R1064:1064 Classes <> z:29 var
-R1070:1070 Classes <> x:30 var
-R1078:1078 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1129:1135 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1091:1091 Classes <> V:18 var
-binder 1087:1087 <> x:31
-R1095:1102 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R1108:1110 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R1107:1107 Classes <> V:18 var
-binder 1103:1103 <> w:32
-R1124:1126 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1111:1119 Classes <> vaddition:22 var
-R1123:1123 Classes <> w:32 var
-R1121:1121 Classes <> x:31 var
-R1127:1128 Classes <> v0:23 var
-R1136:1136 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1174:1180 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1149:1149 Classes <> V:18 var
-binder 1145:1145 <> x:33
-R1170:1172 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1153:1164 Classes <> vscalar_mult:21 var
-R1169:1169 Classes <> x:33 var
-R1166:1167 Classes <> r1 meth
-R1173:1173 Classes <> x:33 var
-R1181:1181 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1288:1295 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1397:1397 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1194:1194 Classes <> F:17 var
-binder 1190:1190 <> a:34
-R1204:1204 Classes <> V:18 var
-binder 1198:1198 <> x:35
-binder 1200:1200 <> y:36
-R1238:1240 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1208:1219 Classes <> vscalar_mult:21 var
-R1224:1232 Classes <> vaddition:22 var
-R1236:1236 Classes <> y:36 var
-R1234:1234 Classes <> x:35 var
-R1221:1221 Classes <> a:34 var
-R1241:1249 Classes <> vaddition:22 var
-R1271:1282 Classes <> vscalar_mult:21 var
-R1286:1286 Classes <> y:36 var
-R1284:1284 Classes <> a:34 var
-R1252:1263 Classes <> vscalar_mult:21 var
-R1267:1267 Classes <> x:35 var
-R1265:1265 Classes <> a:34 var
-R1310:1310 Classes <> F:17 var
-binder 1304:1304 <> a:37
-binder 1306:1306 <> b:38
-R1318:1318 Classes <> V:18 var
-binder 1314:1314 <> x:39
-R1347:1349 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1322:1333 Classes <> vscalar_mult:21 var
-R1346:1346 Classes <> x:39 var
-R1336:1339 Classes <> radd meth
-R1343:1343 Classes <> b:38 var
-R1341:1341 Classes <> a:37 var
-R1350:1358 Classes <> vaddition:22 var
-R1380:1391 Classes <> vscalar_mult:21 var
-R1395:1395 Classes <> x:39 var
-R1393:1393 Classes <> b:38 var
-R1361:1372 Classes <> vscalar_mult:21 var
-R1376:1376 Classes <> x:39 var
-R1374:1374 Classes <> a:37 var
-rec 1408:1418 <> VectorSpace
-proj 1444:1455 <> vscalar_mult
-proj 1474:1482 <> vaddition
-proj 1501:1502 <> v0
-proj 1511:1523 <> isvectorspace
-binder 1420:1420 <> F:40
-R1424:1428 Classes <> Field class
-R1430:1430 Classes <> F:40 var
-binder 1424:1430 <> H0:42
-binder 1433:1433 <> V:43
-R1460:1463 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1465:1468 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1469:1469 Classes <> V:43 var
-R1464:1464 Classes <> V:43 var
-R1459:1459 Classes <> F:40 var
-R1487:1490 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1492:1495 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1496:1496 Classes <> V:43 var
-R1491:1491 Classes <> V:43 var
-R1486:1486 Classes <> V:43 var
-R1506:1506 Classes <> V:43 var
-R1527:1544 Classes <> vectorspace_theory def
-R1569:1570 Classes <> v0:47 meth
-R1559:1567 Classes <> vaddition:46 meth
-R1546:1557 Classes <> vscalar_mult:45 meth
-binder 1741:1741 <> F:49
-binder 1743:1743 <> V:50
-R1764:1774 Classes <> VectorSpace class
-R1778:1778 Classes <> VS.V var
-R1776:1776 Classes <> VS.F var
-binder 1764:1778 <> H1:53
-def 1794:1798 <> vainv
-R1805:1805 Classes <> VS.V var
-binder 1801:1801 <> v:54
-R1813:1824 Classes <> vscalar_mult meth
-R1837:1837 Classes <> v:54 var
-R1827:1831 Classes <> rainv meth
-R1833:1834 Classes <> r1 meth
-R1856:1864 Classes <> vaddition meth
-not 1847:1847 VS ::vectorspace_scope:x_'⨥'_x
-R1914:1925 Classes <> vscalar_mult meth
-not 1907:1907 VS ::vectorspace_scope:x_'*'_x
-R1966:1970 Classes <> vainv def
-not 1957:1957 VS ::vectorspace_scope:'⨪'
-prf 2003:2026 <> unique_additive_identity
-R2106:2106 Classes <> VS.V var
-binder 2099:2099 <> v:55
-binder 2101:2102 <> z':56
-R2155:2158 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2161:2163 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2159:2160 Classes <> v0 meth
-R2164:2165 Classes <> z':56 var
-R2150:2152 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2111:2119 Classes <> vaddition meth
-R2124:2135 Classes <> vscalar_mult meth
-R2148:2148 Classes <> v:55 var
-R2138:2142 Classes <> rainv meth
-R2144:2145 Classes <> r1 meth
-R2121:2121 Classes <> v:55 var
-R2153:2154 Classes <> z':56 var
-prf 2205:2227 <> unique_additive_inverse
-R2239:2239 Classes <> VS.V var
-binder 2230:2230 <> v:57
-binder 2232:2232 <> w:58
-binder 2234:2235 <> w':59
-R2258:2261 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2275:2278 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2280:2282 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2279:2279 Classes <> w:58 var
-R2283:2284 Classes <> w':59 var
-R2270:2272 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2263:2267 Classes VS ::vectorspace_scope:x_'⨥'_x not
-R2262:2262 Classes <> v:57 var
-R2268:2269 Classes <> w':59 var
-R2273:2274 Classes <> v0 meth
-R2253:2255 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2247:2251 Classes VS ::vectorspace_scope:x_'⨥'_x not
-R2246:2246 Classes <> v:57 var
-R2252:2252 Classes <> w:58 var
-R2256:2257 Classes <> v0 meth
-prf 2323:2339 <> zero_times_vector
-R2346:2346 Classes <> VS.V var
-binder 2342:2342 <> v:60
-R2359:2361 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2355:2357 Classes VS ::vectorspace_scope:x_'*'_x not
-R2353:2354 Classes <> r0 meth
-R2358:2358 Classes <> v:60 var
-R2362:2363 Classes <> v0 meth
-prf 2392:2408 <> number_times_zero
-R2415:2415 Classes <> VS.F var
-binder 2411:2411 <> a:61
-R2428:2430 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2423:2425 Classes VS ::vectorspace_scope:x_'*'_x not
-R2422:2422 Classes <> a:61 var
-R2426:2427 Classes <> v0 meth
-R2431:2432 Classes <> v0 meth
-prf 2461:2481 <> minusone_times_vector
-R2488:2488 Classes <> VS.V var
-binder 2484:2484 <> v:62
-R2520:2522 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2495:2506 Classes <> vscalar_mult meth
-R2519:2519 Classes <> v:62 var
-R2509:2513 Classes <> rainv meth
-R2515:2516 Classes <> r1 meth
-R2523:2527 Classes VS ::vectorspace_scope:'⨪' not
-R2527:2527 Classes <> v:62 var
-prf 2556:2571 <> vainv_involutive
-R2578:2578 Classes <> VS.V var
-binder 2574:2574 <> v:63
-R2596:2598 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2585:2595 Classes VS ::vectorspace_scope:'⨪' not
-R2590:2594 Classes VS ::vectorspace_scope:'⨪' not
-R2594:2594 Classes <> v:63 var
-R2599:2599 Classes <> v:63 var
-R2618:2622 Classes <> vainv def
-prf 2644:2650 <> zero_or
-R2657:2657 Classes <> VS.F var
-binder 2653:2653 <> a:64
-R2665:2665 Classes <> VS.V var
-binder 2661:2661 <> u:65
-R2682:2685 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2692:2695 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R2687:2689 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2686:2686 Classes <> a:64 var
-R2690:2691 Classes <> r0 meth
-R2697:2699 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2696:2696 Classes <> u:65 var
-R2700:2701 Classes <> v0 meth
-R2677:2679 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2673:2675 Classes VS ::vectorspace_scope:x_'*'_x not
-R2672:2672 Classes <> a:64 var
-R2676:2676 Classes <> u:65 var
-R2680:2681 Classes <> v0 meth
-R2726:2727 Classes VS <> sec
+R58:63 Coq.Setoids.Setoid <> <> lib
+R81:103 Coq.Classes.RelationClasses <> <> lib
+R121:137 Coq.Classes.Morphisms <> <> lib
+sec 149:150 <> VS
+rec 186:189 <> Ring
+proj 202:203 <> r0
+proj 212:213 <> r1
+proj 222:225 <> radd
+proj 244:248 <> rmult
+proj 267:271 <> rainv
+proj 285:290 <> rminus
+proj 309:314 <> isring
+binder 191:191 <> A:1
+R207:207 Classes <> A:1 var
+R217:217 Classes <> A:1 var
+R230:233 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R235:238 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R239:239 Classes <> A:1 var
+R234:234 Classes <> A:1 var
+R229:229 Classes <> A:1 var
+R253:256 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R258:261 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R262:262 Classes <> A:1 var
+R257:257 Classes <> A:1 var
+R252:252 Classes <> A:1 var
+R276:279 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R280:280 Classes <> A:1 var
+R275:275 Classes <> A:1 var
+R295:298 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R300:303 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R304:304 Classes <> A:1 var
+R299:299 Classes <> A:1 var
+R294:294 Classes <> A:1 var
+R318:328 Coq.setoid_ring.Ring_theory <> ring_theory rec
+R360:361 Coq.Init.Logic <> eq ind
+R354:358 Classes <> rainv:7 meth
+R347:352 Classes <> rminus:8 meth
+R341:345 Classes <> rmult:6 meth
+R336:339 Classes <> radd:5 meth
+R333:334 Classes <> r1:4 meth
+R330:331 Classes <> r0:3 meth
+rec 400:404 <> Field
+proj 427:430 <> fdiv
+proj 449:452 <> finv
+proj 466:472 <> isfield
+binder 406:406 <> A:10
+R410:413 Classes <> Ring class
+R415:415 Classes <> A:10 var
+binder 410:415 <> H:11
+R435:438 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R440:443 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R444:444 Classes <> A:10 var
+R439:439 Classes <> A:10 var
+R434:434 Classes <> A:10 var
+R457:460 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R461:461 Classes <> A:10 var
+R456:456 Classes <> A:10 var
+R476:487 Coq.setoid_ring.Field_theory <> field_theory rec
+R529:530 Coq.Init.Logic <> eq ind
+R524:527 Classes <> finv:14 meth
+R519:522 Classes <> fdiv:13 meth
+R513:517 Classes <> rainv meth
+R506:511 Classes <> rminus meth
+R500:504 Classes <> rmult meth
+R495:498 Classes <> radd meth
+R492:493 Classes <> r1 meth
+R489:490 Classes <> r0 meth
+R678:681 Classes <> radd meth
+not 671:671 VS ::field_scope:x_'+'_x
+R711:715 Classes <> rmult meth
+not 704:704 VS ::field_scope:x_'*'_x
+R750:754 Classes <> rainv meth
+not 741:741 VS ::field_scope:'-'_x
+R789:792 Classes <> finv meth
+not 780:780 VS ::field_scope:'/'_x
+R822:825 Classes <> fdiv meth
+not 815:815 VS ::field_scope:x_'/'_x
+constr 1878:1883 <> mk_vst
+rec 1747:1764 <> vectorspace_theory
+proj 1903:1911 <> vadd_comm
+proj 1969:1978 <> vadd_assoc
+proj 2056:2065 <> vadd_ident
+proj 2113:2120 <> vadd_inv
+proj 2184:2195 <> vsmult_ident
+proj 2245:2251 <> vdistr1
+proj 2350:2356 <> vdistr2
+binder 1767:1767 <> F:16
+binder 1769:1769 <> V:17
+R1781:1785 Classes <> Field class
+R1787:1787 Classes <> F:16 var
+binder 1781:1787 <> H0:19
+R1799:1802 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1804:1807 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1808:1808 Classes <> V:17 var
+R1803:1803 Classes <> V:17 var
+R1798:1798 Classes <> V:17 var
+binder 1791:1794 <> vadd:20
+R1822:1825 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1827:1830 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1831:1831 Classes <> V:17 var
+R1826:1826 Classes <> V:17 var
+R1821:1821 Classes <> F:16 var
+binder 1812:1817 <> vsmult:21
+R1840:1840 Classes <> V:17 var
+binder 1835:1836 <> v0:22
+R1851:1854 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1856:1859 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1855:1855 Classes <> V:17 var
+R1850:1850 Classes <> V:17 var
+binder 1844:1846 <> veq:23
+R1929:1929 Classes <> V:17 var
+binder 1923:1923 <> x:25
+binder 1925:1925 <> y:26
+R1933:1935 Classes <> veq:23 var
+R1949:1952 Classes <> vadd:20 var
+R1956:1956 Classes <> x:25 var
+R1954:1954 Classes <> y:26 var
+R1938:1941 Classes <> vadd:20 var
+R1945:1945 Classes <> y:26 var
+R1943:1943 Classes <> x:25 var
+R1998:1998 Classes <> V:17 var
+binder 1990:1990 <> x:28
+binder 1992:1992 <> y:29
+binder 1994:1994 <> z:30
+R2002:2004 Classes <> veq:23 var
+R2027:2030 Classes <> vadd:20 var
+R2035:2038 Classes <> vadd:20 var
+R2042:2042 Classes <> z:30 var
+R2040:2040 Classes <> y:29 var
+R2032:2032 Classes <> x:28 var
+R2007:2010 Classes <> vadd:20 var
+R2023:2023 Classes <> z:30 var
+R2013:2016 Classes <> vadd:20 var
+R2020:2020 Classes <> y:29 var
+R2018:2018 Classes <> x:28 var
+R2081:2081 Classes <> V:17 var
+binder 2077:2077 <> x:32
+R2085:2087 Classes <> veq:23 var
+R2101:2101 Classes <> x:32 var
+R2090:2093 Classes <> vadd:20 var
+R2097:2098 Classes <> v0:22 var
+R2095:2095 Classes <> x:32 var
+R2136:2136 Classes <> V:17 var
+binder 2132:2132 <> x:34
+R2140:2147 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2153:2155 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2152:2152 Classes <> V:17 var
+binder 2148:2148 <> w:35
+R2156:2158 Classes <> veq:23 var
+R2171:2172 Classes <> v0:22 var
+R2161:2164 Classes <> vadd:20 var
+R2168:2168 Classes <> w:35 var
+R2166:2166 Classes <> x:34 var
+R2211:2211 Classes <> V:17 var
+binder 2207:2207 <> x:37
+R2215:2217 Classes <> veq:23 var
+R2233:2233 Classes <> x:37 var
+R2220:2225 Classes <> vsmult:21 var
+R2230:2230 Classes <> x:37 var
+R2227:2228 Classes <> r1 meth
+R2267:2267 Classes <> F:16 var
+binder 2263:2263 <> a:39
+R2277:2277 Classes <> V:17 var
+binder 2271:2271 <> x:40
+binder 2273:2273 <> y:41
+R2281:2283 Classes <> veq:23 var
+R2308:2311 Classes <> vadd:20 var
+R2327:2332 Classes <> vsmult:21 var
+R2336:2336 Classes <> y:41 var
+R2334:2334 Classes <> a:39 var
+R2314:2319 Classes <> vsmult:21 var
+R2323:2323 Classes <> x:40 var
+R2321:2321 Classes <> a:39 var
+R2286:2291 Classes <> vsmult:21 var
+R2296:2299 Classes <> vadd:20 var
+R2303:2303 Classes <> y:41 var
+R2301:2301 Classes <> x:40 var
+R2293:2293 Classes <> a:39 var
+R2374:2374 Classes <> F:16 var
+binder 2368:2368 <> a:43
+binder 2370:2370 <> b:44
+R2382:2382 Classes <> V:17 var
+binder 2378:2378 <> x:45
+R2386:2388 Classes <> veq:23 var
+R2413:2416 Classes <> vadd:20 var
+R2432:2437 Classes <> vsmult:21 var
+R2441:2441 Classes <> x:45 var
+R2439:2439 Classes <> b:44 var
+R2419:2424 Classes <> vsmult:21 var
+R2428:2428 Classes <> x:45 var
+R2426:2426 Classes <> a:43 var
+R2391:2396 Classes <> vsmult:21 var
+R2409:2409 Classes <> x:45 var
+R2399:2402 Classes <> radd meth
+R2406:2406 Classes <> b:44 var
+R2404:2404 Classes <> a:43 var
+rec 2464:2474 <> VectorSpace
+proj 2500:2508 <> vaddition
+proj 2527:2538 <> vscalar_mult
+proj 2557:2558 <> v0
+proj 2567:2569 <> veq
+proj 2591:2603 <> isvectorspace
+binder 2476:2476 <> F:47
+R2480:2484 Classes <> Field class
+R2486:2486 Classes <> F:47 var
+binder 2480:2486 <> H0:49
+binder 2489:2489 <> V:50
+R2513:2516 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2518:2521 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2522:2522 Classes <> V:50 var
+R2517:2517 Classes <> V:50 var
+R2512:2512 Classes <> V:50 var
+R2543:2546 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2548:2551 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2552:2552 Classes <> V:50 var
+R2547:2547 Classes <> V:50 var
+R2542:2542 Classes <> F:47 var
+R2562:2562 Classes <> V:50 var
+R2574:2577 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2579:2582 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2578:2578 Classes <> V:50 var
+R2573:2573 Classes <> V:50 var
+R2607:2624 Classes <> vectorspace_theory rec
+R2652:2654 Classes <> veq:55 meth
+R2649:2650 Classes <> v0:54 meth
+R2636:2647 Classes <> vscalar_mult:53 meth
+R2626:2634 Classes <> vaddition:52 meth
+var 2828:2828 VS F
+var 2830:2830 VS V
+R2851:2861 Classes <> VectorSpace class
+R2865:2865 Classes <> VS.V var
+R2863:2863 Classes <> VS.F var
+binder 2851:2865 <> H1:61
+def 2881:2885 <> vainv
+R2892:2892 Classes <> VS.V var
+binder 2888:2888 <> v:62
+R2900:2911 Classes <> vscalar_mult meth
+R2924:2924 Classes <> v:62 var
+R2914:2918 Classes <> rainv meth
+R2920:2921 Classes <> r1 meth
+def 2939:2944 <> vminus
+R2953:2953 Classes <> VS.V var
+binder 2947:2947 <> u:63
+binder 2949:2949 <> v:64
+R2961:2969 Classes <> vaddition meth
+R2974:2978 Classes <> vainv def
+R2980:2980 Classes <> v:64 var
+R2971:2971 Classes <> u:63 var
+R3000:3008 Classes <> vaddition meth
+not 2991:2991 VS ::vectorspace_scope:x_'⨥'_x
+R3058:3069 Classes <> vscalar_mult meth
+not 3051:3051 VS ::vectorspace_scope:x_'*'_x
+R3110:3114 Classes <> vainv def
+not 3101:3101 VS ::vectorspace_scope:'⨪'
+R3152:3157 Classes <> vminus def
+not 3143:3143 VS ::vectorspace_scope:x_'⨪'_x
+R3208:3210 Classes <> veq meth
+not 3200:3200 VS ::vectorspace_scope:x_'=='_x
+constr 3284:3291 <> mk_vseqe
+rec 3255:3272 <> vectorspace_eq_ext
+proj 3298:3305 <> vadd_ext
+proj 3407:3412 <> v0_ext
+R3309:3314 Coq.Classes.Morphisms <> Proper class
+R3338:3346 Classes <> vaddition meth
+R3320:3324 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R3317:3319 Classes <> veq meth
+R3328:3332 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R3325:3327 Classes <> veq meth
+R3333:3335 Classes <> veq meth
+R3416:3421 Coq.Classes.Morphisms <> Proper class
+R3427:3428 Classes <> v0 meth
+R3423:3425 Classes <> veq meth
+prf 3445:3458 <> veq_equiv_refl
+R3474:3474 Classes <> VS.V var
+binder 3470:3470 <> v:68
+R3479:3482 Classes VS ::vectorspace_scope:x_'=='_x not
+R3478:3478 Classes <> v:68 var
+R3483:3483 Classes <> v:68 var
+prf 3507:3520 <> veq_equiv_symm
+R3538:3538 Classes <> VS.V var
+binder 3532:3532 <> u:69
+binder 3534:3534 <> v:70
+R3548:3551 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3553:3556 Classes VS ::vectorspace_scope:x_'=='_x not
+R3552:3552 Classes <> v:70 var
+R3557:3557 Classes <> u:69 var
+R3543:3546 Classes VS ::vectorspace_scope:x_'=='_x not
+R3542:3542 Classes <> u:69 var
+R3547:3547 Classes <> v:70 var
+prf 3581:3595 <> veq_equiv_trans
+R3615:3615 Classes <> VS.V var
+binder 3607:3607 <> u:71
+binder 3609:3609 <> v:72
+binder 3611:3611 <> w:73
+R3625:3628 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3635:3638 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3640:3643 Classes VS ::vectorspace_scope:x_'=='_x not
+R3639:3639 Classes <> u:71 var
+R3644:3644 Classes <> w:73 var
+R3630:3633 Classes VS ::vectorspace_scope:x_'=='_x not
+R3629:3629 Classes <> v:72 var
+R3634:3634 Classes <> w:73 var
+R3620:3623 Classes VS ::vectorspace_scope:x_'=='_x not
+R3619:3619 Classes <> u:71 var
+R3624:3624 Classes <> v:72 var
+inst 3669:3680 <> VEqReflexive
+R3684:3692 Coq.Classes.RelationClasses <> Reflexive class
+R3694:3696 Classes <> veq meth
+R3707:3717 Coq.Classes.RelationClasses <> reflexivity def
+R3722:3735 Classes <> veq_equiv_refl prfax
+inst 3753:3764 <> VEqSymmetric
+R3768:3776 Coq.Classes.RelationClasses <> Symmetric class
+R3778:3780 Classes <> veq meth
+R3791:3798 Coq.Classes.RelationClasses <> symmetry def
+R3803:3816 Classes <> veq_equiv_symm prfax
+inst 3834:3846 <> VEqTransitive
+R3850:3859 Coq.Classes.RelationClasses <> Transitive class
+R3861:3863 Classes <> veq meth
+R3874:3885 Coq.Classes.RelationClasses <> transitivity def
+R3890:3904 Classes <> veq_equiv_trans prfax
+inst 3921:3928 <> VEqEquiv
+R3932:3942 Coq.Classes.RelationClasses <> Equivalence class
+R3944:3946 Classes <> veq meth
+R4039:4060 Coq.Classes.RelationClasses <> Equivalence_Transitive meth
+R3998:4018 Coq.Classes.RelationClasses <> Equivalence_Symmetric meth
+R3957:3977 Coq.Classes.RelationClasses <> Equivalence_Reflexive meth
+R3982:3993 Classes <> VEqReflexive inst
+R4023:4034 Classes <> VEqSymmetric inst
+R4065:4077 Classes <> VEqTransitive inst
+prf 4094:4101 <> veq_refl
+R4117:4117 Classes <> VS.V var
+binder 4113:4113 <> v:74
+R4122:4125 Classes VS ::vectorspace_scope:x_'=='_x not
+R4121:4121 Classes <> v:74 var
+R4126:4126 Classes <> v:74 var
+prf 4175:4182 <> veq_symm
+R4200:4200 Classes <> VS.V var
+binder 4194:4194 <> u:75
+binder 4196:4196 <> v:76
+R4210:4213 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4215:4218 Classes VS ::vectorspace_scope:x_'=='_x not
+R4214:4214 Classes <> v:76 var
+R4219:4219 Classes <> u:75 var
+R4205:4208 Classes VS ::vectorspace_scope:x_'=='_x not
+R4204:4204 Classes <> u:75 var
+R4209:4209 Classes <> v:76 var
+prf 4289:4297 <> veq_trans
+R4317:4317 Classes <> VS.V var
+binder 4309:4309 <> u:77
+binder 4311:4311 <> v:78
+binder 4313:4313 <> w:79
+R4327:4330 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4337:4340 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4342:4345 Classes VS ::vectorspace_scope:x_'=='_x not
+R4341:4341 Classes <> u:77 var
+R4346:4346 Classes <> w:79 var
+R4332:4335 Classes VS ::vectorspace_scope:x_'=='_x not
+R4331:4331 Classes <> v:78 var
+R4336:4336 Classes <> w:79 var
+R4322:4325 Classes VS ::vectorspace_scope:x_'=='_x not
+R4321:4321 Classes <> u:77 var
+R4326:4326 Classes <> v:78 var
+R4459:4461 Classes <> veq meth
+R4457:4457 Classes <> VS.V var
+R4459:4461 Classes <> veq meth
+R4457:4457 Classes <> VS.V var
+R4487:4494 Classes <> veq_refl thm
+R4459:4461 Classes <> veq meth
+R4457:4457 Classes <> VS.V var
+R4517:4524 Classes <> veq_symm thm
+R4459:4461 Classes <> veq meth
+R4457:4457 Classes <> VS.V var
+R4551:4559 Classes <> veq_trans thm
+R4459:4461 Classes <> veq meth
+R4457:4457 Classes <> VS.V var
+R4487:4494 Classes <> veq_refl thm
+R4517:4524 Classes <> veq_symm thm
+R4551:4559 Classes <> veq_trans thm
+R4598:4606 Classes <> vaddition meth
+R4627:4631 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R4624:4626 Classes <> veq meth
+R4635:4639 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R4632:4634 Classes <> veq meth
+R4640:4642 Classes <> veq meth
+prf 4904:4918 <> vaddition_assoc
+R4929:4929 Classes <> VS.V var
+binder 4921:4921 <> u:80
+binder 4923:4923 <> v:81
+binder 4925:4925 <> w:82
+R4949:4952 Classes VS ::vectorspace_scope:x_'=='_x not
+R4934:4934 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R4942:4947 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R4936:4940 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R4935:4935 Classes <> u:80 var
+R4941:4941 Classes <> v:81 var
+R4948:4948 Classes <> w:82 var
+R4954:4959 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R4967:4967 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R4953:4953 Classes <> u:80 var
+R4961:4965 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R4960:4960 Classes <> v:81 var
+R4966:4966 Classes <> w:82 var
+R4994:4995 Classes <> VS.H1 var
+prf 5010:5024 <> vaddition_commu
+R5033:5033 Classes <> VS.V var
+binder 5027:5027 <> u:83
+binder 5029:5029 <> v:84
+R5045:5048 Classes VS ::vectorspace_scope:x_'=='_x not
+R5039:5043 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R5038:5038 Classes <> u:83 var
+R5044:5044 Classes <> v:84 var
+R5050:5054 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R5049:5049 Classes <> v:84 var
+R5055:5055 Classes <> u:83 var
+R5082:5083 Classes <> VS.H1 var
+prf 5098:5112 <> vaddition_ident
+R5119:5119 Classes <> VS.V var
+binder 5115:5115 <> v:85
+R5132:5135 Classes VS ::vectorspace_scope:x_'=='_x not
+R5125:5129 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R5124:5124 Classes <> v:85 var
+R5130:5131 Classes <> v0 meth
+R5136:5136 Classes <> v:85 var
+R5163:5164 Classes <> VS.H1 var
+prf 5179:5195 <> vaddition_inverse
+R5202:5202 Classes <> VS.V var
+binder 5198:5198 <> v:86
+R5207:5214 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5220:5222 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5219:5219 Classes <> VS.V var
+binder 5215:5215 <> w:87
+R5230:5233 Classes VS ::vectorspace_scope:x_'=='_x not
+R5224:5228 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R5223:5223 Classes <> v:86 var
+R5229:5229 Classes <> w:87 var
+R5234:5235 Classes <> v0 meth
+R5266:5267 Classes <> VS.H1 var
+prf 5380:5403 <> vmultiplicative_identity
+R5410:5410 Classes <> VS.V var
+binder 5406:5406 <> v:88
+R5421:5424 Classes VS ::vectorspace_scope:x_'=='_x not
+R5417:5419 Classes VS ::vectorspace_scope:x_'*'_x not
+R5415:5416 Classes <> r1 meth
+R5420:5420 Classes <> v:88 var
+R5425:5425 Classes <> v:88 var
+R5452:5453 Classes <> VS.H1 var
+prf 5468:5481 <> vdistributive1
+R5488:5488 Classes <> VS.F var
+binder 5484:5484 <> a:89
+R5498:5498 Classes <> VS.V var
+binder 5492:5492 <> u:90
+binder 5494:5494 <> v:91
+R5516:5519 Classes VS ::vectorspace_scope:x_'=='_x not
+R5504:5507 Classes VS ::vectorspace_scope:x_'*'_x not
+R5515:5515 Classes VS ::vectorspace_scope:x_'*'_x not
+R5503:5503 Classes <> a:89 var
+R5509:5513 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R5508:5508 Classes <> u:90 var
+R5514:5514 Classes <> v:91 var
+R5525:5529 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R5521:5523 Classes VS ::vectorspace_scope:x_'*'_x not
+R5520:5520 Classes <> a:89 var
+R5524:5524 Classes <> u:90 var
+R5531:5533 Classes VS ::vectorspace_scope:x_'*'_x not
+R5530:5530 Classes <> a:89 var
+R5534:5534 Classes <> v:91 var
+R5561:5562 Classes <> VS.H1 var
+prf 5577:5590 <> vdistributive2
+R5599:5599 Classes <> VS.F var
+binder 5593:5593 <> a:92
+binder 5595:5595 <> b:93
+R5607:5607 Classes <> VS.V var
+binder 5603:5603 <> v:94
+R5623:5626 Classes VS ::vectorspace_scope:x_'=='_x not
+R5612:5612 Classes VS ::vectorspace_scope:x_'*'_x not
+R5618:5621 Classes VS ::vectorspace_scope:x_'*'_x not
+R5614:5616 Classes VS ::field_scope:x_'+'_x not
+R5613:5613 Classes <> a:92 var
+R5617:5617 Classes <> b:93 var
+R5622:5622 Classes <> v:94 var
+R5632:5636 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R5628:5630 Classes VS ::vectorspace_scope:x_'*'_x not
+R5627:5627 Classes <> a:92 var
+R5631:5631 Classes <> v:94 var
+R5638:5640 Classes VS ::vectorspace_scope:x_'*'_x not
+R5637:5637 Classes <> b:93 var
+R5641:5641 Classes <> v:94 var
+R5668:5669 Classes <> VS.H1 var
+prf 5684:5696 <> radd_inv_zero
+R5703:5703 Classes <> VS.F var
+binder 5699:5699 <> x:95
+R5719:5721 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5709:5711 Classes VS ::field_scope:x_'+'_x not
+R5708:5708 Classes <> x:95 var
+R5712:5716 Classes <> rainv meth
+R5718:5718 Classes <> x:95 var
+R5722:5723 Classes <> r0 meth
+R5747:5747 Classes <> VS.H var
+prf 5812:5828 <> zero_times_vector
+R5835:5835 Classes <> VS.V var
+binder 5831:5831 <> v:96
+R5848:5851 Classes VS ::vectorspace_scope:x_'=='_x not
+R5844:5846 Classes VS ::vectorspace_scope:x_'*'_x not
+R5842:5843 Classes <> r0 meth
+R5847:5847 Classes <> v:96 var
+R5852:5853 Classes <> v0 meth
+R5877:5877 Classes <> VS.H var
+R5903:5904 Classes <> r0 meth
+R5903:5904 Classes <> r0 meth
+R5903:5904 Classes <> r0 meth
+R5929:5930 Classes <> VS.H1 var
+prf 6012:6028 <> vadd_inverse_zero
+R6035:6035 Classes <> VS.V var
+binder 6031:6031 <> v:97
+R6051:6054 Classes VS ::vectorspace_scope:x_'=='_x not
+R6041:6045 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6040:6040 Classes <> v:97 var
+R6046:6050 Classes VS ::vectorspace_scope:'⨪' not
+R6050:6050 Classes <> v:97 var
+R6055:6056 Classes <> v0 meth
+R6075:6079 Classes <> vainv def
+R6095:6118 Classes <> vmultiplicative_identity thm
+R6095:6118 Classes <> vmultiplicative_identity thm
+R6095:6118 Classes <> vmultiplicative_identity thm
+R6136:6149 Classes <> vdistributive1 thm
+R6136:6149 Classes <> vdistributive1 thm
+R6136:6149 Classes <> vdistributive1 thm
+R6162:6185 Classes <> vmultiplicative_identity thm
+R6196:6198 Classes VS ::vectorspace_scope:x_'*'_x not
+R6188:6192 Classes <> rainv meth
+R6194:6195 Classes <> r1 meth
+R6215:6238 Classes <> vmultiplicative_identity thm
+R6249:6251 Classes VS ::vectorspace_scope:x_'*'_x not
+R6241:6245 Classes <> rainv meth
+R6247:6248 Classes <> r1 meth
+R6215:6238 Classes <> vmultiplicative_identity thm
+R6249:6251 Classes VS ::vectorspace_scope:x_'*'_x not
+R6241:6245 Classes <> rainv meth
+R6247:6248 Classes <> r1 meth
+R6215:6238 Classes <> vmultiplicative_identity thm
+R6249:6251 Classes VS ::vectorspace_scope:x_'*'_x not
+R6241:6245 Classes <> rainv meth
+R6247:6248 Classes <> r1 meth
+prf 6274:6290 <> cancel_vadditive1
+R6299:6299 Classes <> VS.V var
+binder 6293:6293 <> u:98
+binder 6295:6295 <> v:99
+R6310:6313 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6327:6330 Classes VS ::vectorspace_scope:x_'=='_x not
+R6315:6320 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6326:6326 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6314:6314 Classes <> u:98 var
+R6321:6325 Classes VS ::vectorspace_scope:'⨪' not
+R6325:6325 Classes <> u:98 var
+R6332:6337 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6343:6343 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6331:6331 Classes <> v:99 var
+R6338:6342 Classes VS ::vectorspace_scope:'⨪' not
+R6342:6342 Classes <> u:98 var
+R6305:6308 Classes VS ::vectorspace_scope:x_'=='_x not
+R6304:6304 Classes <> u:98 var
+R6309:6309 Classes <> v:99 var
+prf 6393:6412 <> add_v_to_both_sides1
+R6421:6421 Classes <> VS.V var
+binder 6415:6415 <> u:100
+binder 6417:6417 <> v:101
+binder 6433:6433 <> w:102
+R6441:6444 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6452:6454 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6446:6450 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6445:6445 Classes <> w:102 var
+R6451:6451 Classes <> u:100 var
+R6456:6460 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6455:6455 Classes <> w:102 var
+R6461:6461 Classes <> v:101 var
+R6437:6439 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6436:6436 Classes <> u:100 var
+R6440:6440 Classes <> v:101 var
+prf 6513:6532 <> add_v_to_both_sides2
+R6541:6541 Classes <> VS.V var
+binder 6535:6535 <> u:103
+binder 6537:6537 <> v:104
+binder 6553:6553 <> w:105
+R6573:6576 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6578:6580 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6577:6577 Classes <> u:103 var
+R6581:6581 Classes <> v:104 var
+R6563:6565 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6557:6561 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6556:6556 Classes <> w:105 var
+R6562:6562 Classes <> u:103 var
+R6567:6571 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6566:6566 Classes <> w:105 var
+R6572:6572 Classes <> v:104 var
+R6640:6644 Classes VS ::vectorspace_scope:'⨪' not
+R6609:6628 Classes <> add_v_to_both_sides1 thm
+R6640:6644 Classes VS ::vectorspace_scope:'⨪' not
+R6609:6628 Classes <> add_v_to_both_sides1 thm
+prf 6675:6693 <> vaddition_injective
+R6700:6700 Classes <> VS.V var
+binder 6696:6696 <> v:106
+R6718:6718 Classes <> VS.V var
+binder 6712:6712 <> u:107
+binder 6714:6714 <> w:108
+R6738:6741 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6743:6745 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6742:6742 Classes <> u:107 var
+R6746:6746 Classes <> w:108 var
+R6728:6730 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6722:6726 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6721:6721 Classes <> v:106 var
+R6727:6727 Classes <> u:107 var
+R6732:6736 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6731:6731 Classes <> v:106 var
+R6737:6737 Classes <> w:108 var
+R6784:6803 Classes <> add_v_to_both_sides2 prfax
+R6784:6803 Classes <> add_v_to_both_sides2 prfax
+R6784:6803 Classes <> add_v_to_both_sides2 prfax
+R6784:6803 Classes <> add_v_to_both_sides2 prfax
+prf 6833:6857 <> unique_vadditive_identity
+R6868:6868 Classes <> VS.V var
+binder 6860:6860 <> v:109
+binder 6862:6864 <> v0':110
+binder 6884:6884 <> u:111
+R6896:6899 Classes VS ::vectorspace_scope:x_'=='_x not
+R6888:6892 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R6887:6887 Classes <> u:111 var
+R6893:6895 Classes <> v0':110 var
+R6900:6900 Classes <> u:111 var
+binder 6872:6873 <> H2:112
+R6908:6911 Classes VS ::vectorspace_scope:x_'=='_x not
+R6905:6907 Classes <> v0':110 var
+R6912:6913 Classes <> v0 meth
+R6940:6941 Classes <> v0 meth
+R6940:6941 Classes <> v0 meth
+R6972:6986 Classes <> vaddition_commu thm
+R6972:6986 Classes <> vaddition_commu thm
+R6972:6986 Classes <> vaddition_commu thm
+R6999:7013 Classes <> vaddition_ident thm
+R6999:7013 Classes <> vaddition_ident thm
+R6999:7013 Classes <> vaddition_ident thm
+prf 7043:7068 <> unique_vadditive_identity'
+R7079:7079 Classes <> VS.V var
+binder 7071:7071 <> v:113
+binder 7073:7075 <> v0':114
+R7103:7106 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7110:7112 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7107:7109 Classes <> v0':114 var
+R7113:7114 Classes <> v0 meth
+R7097:7099 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7085:7090 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R7096:7096 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R7084:7084 Classes <> v:113 var
+R7091:7095 Classes VS ::vectorspace_scope:'⨪' not
+R7095:7095 Classes <> v:113 var
+R7100:7102 Classes <> v0':114 var
+prf 7165:7188 <> unique_vadditive_inverse
+R7273:7273 Classes <> VS.V var
+binder 7269:7269 <> v:115
+R7293:7293 Classes <> VS.V var
+binder 7286:7286 <> w:116
+binder 7288:7289 <> w':117
+R7311:7313 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7305:7309 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R7304:7304 Classes <> v:115 var
+R7310:7310 Classes <> w:116 var
+R7314:7315 Classes <> v0 meth
+binder 7297:7300 <> H__w:118
+R7335:7337 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7328:7332 Classes VS ::vectorspace_scope:x_'⨥'_x not
+R7327:7327 Classes <> v:115 var
+R7333:7334 Classes <> w':117 var
+R7338:7339 Classes <> v0 meth
+binder 7319:7323 <> H__w':119
+R7348:7350 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7347:7347 Classes <> w:116 var
+R7351:7352 Classes <> w':117 var
+R7408:7426 Classes <> vaddition_injective thm
+R7408:7426 Classes <> vaddition_injective thm
+prf 7466:7482 <> number_times_zero
+R7489:7489 Classes <> VS.F var
+binder 7485:7485 <> a:120
+R7502:7504 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7497:7499 Classes VS ::vectorspace_scope:x_'*'_x not
+R7496:7496 Classes <> a:120 var
+R7500:7501 Classes <> v0 meth
+R7505:7506 Classes <> v0 meth
+prf 7545:7565 <> minusone_times_vector
+R7572:7572 Classes <> VS.V var
+binder 7568:7568 <> v:121
+R7604:7606 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7579:7590 Classes <> vscalar_mult meth
+R7603:7603 Classes <> v:121 var
+R7593:7597 Classes <> rainv meth
+R7599:7600 Classes <> r1 meth
+R7607:7611 Classes VS ::vectorspace_scope:'⨪' not
+R7611:7611 Classes <> v:121 var
+prf 7640:7655 <> vainv_involutive
+R7662:7662 Classes <> VS.V var
+binder 7658:7658 <> v:122
+R7680:7682 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7669:7679 Classes VS ::vectorspace_scope:'⨪' not
+R7674:7678 Classes VS ::vectorspace_scope:'⨪' not
+R7678:7678 Classes <> v:122 var
+R7683:7683 Classes <> v:122 var
+R7702:7706 Classes <> vainv def
+prf 7728:7734 <> zero_or
+R7741:7741 Classes <> VS.F var
+binder 7737:7737 <> a:123
+R7749:7749 Classes <> VS.V var
+binder 7745:7745 <> u:124
+R7766:7769 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7776:7779 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R7771:7773 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7770:7770 Classes <> a:123 var
+R7774:7775 Classes <> r0 meth
+R7781:7783 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7780:7780 Classes <> u:124 var
+R7784:7785 Classes <> v0 meth
+R7761:7763 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7757:7759 Classes VS ::vectorspace_scope:x_'*'_x not
+R7756:7756 Classes <> a:123 var
+R7760:7760 Classes <> u:124 var
+R7764:7765 Classes <> v0 meth
+R7810:7811 Classes VS <> sec
