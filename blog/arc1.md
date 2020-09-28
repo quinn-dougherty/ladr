@@ -30,10 +30,11 @@ After getting through section 1.A of the book (fields) and 1.B (vector spaces) a
 3. Tactics. Powerful tactics such that simply typing `vectorspace` can solve goals involving applications and rewrites of the vectorspace laws. 
 4. Your coq session maintains a _database_ of rings and fields, which you can update by typing `Add Field my_field` (provided that you have the proof of the laws handy!) (note, this is what unlocks the power of field tactics for user-defined fields). It would be awesome to wire up a table of vectorspaces, so that I could type `Add VectorSpace myvspace` someday. This might involve OCaml, I really have no idea. I haven't spent time on zulip or discourse (which I'm told are the major Coq hubs) discussing this, because I haven't been working on this project off stream and and hasn't occurred to me to just go on zulip or discourse on stream. 
 5. Really excited for span, independence, and bases (chapter 2) but it will have to wait until I formalize 1.C which includes sums and direct sums. This formalization part could take as much as the whole next 24 hours! I really don't know! 
+6. This is complicated but I'm considered significantly derailing the stream's progress through the book to explore other proof assistants. Lean seems like a great choice, and any excuse is a good excuse to explore agda and I might try to shoehorn cubical in just for fun (not _just_ for fun like I'm having a lot of equality issues and for all I know cubical might help). 
 
 ## Final remarks for today
 
-When I had this crackpot idea I ballparked a year. I could be wrong by a factor of 3. But the idea is I only actually _committed_ 3 hours on sunday, so it's not the end of the world if it takes longer than planned. It's possible that someday I'll quit my job and work on it more than just sundays, too, but for now it's just 3 hours on sunday. 
+When I had this crackpot idea I ballparked a year. I could be wrong by a factor of 3. But the idea is I only actually _committed_ 3 hours on sunday, so it's not the end of the world if it takes longer than planned. It's possible that someday I'll have more time and work on it more than just sundays, too, but for now it's just 3 hours on sunday. 
 
 I'd like to thank the following books
 - Logical Foundations by Pierce et. al., which is the ultimate gateway into coq
