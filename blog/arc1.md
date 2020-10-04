@@ -6,10 +6,9 @@ A friend convinced me to write a blog post every 24 hours of stream. This is the
 
 ## The story so far. 
 
-I thought about writing in "we" tense because it honestly feels like a collaboration, I especially want to single out twitch users gerhardgentzen, defl8, and soobtoob for their contributions. However, not every audience member is there all the time, and I'm still driving the thing, so we didn't quite fit for this 24 hour window, so I'll write in the "I" tense.
+I thought about writing in "we" tense because it honestly feels like a collaboration, I especially want to single out twitch users gerhardgentzen, defl8, and soobtoob for their contributions. However, not every audience member is there all the time, and I'm still driving the thing, so "we" didn't quite fit for this 24 hour window, so I'll write in the "I" tense.
 
-Chapter one of LADR is about vector spaces. Vector spaces are defined over their underlying fields, so I knew that the very beginning of the project would deal with field theories.
-A field is a ring with division satisfying certain laws. A ring is a one and a zero with a way of adding, subtracting, and multiplying satisfying some laws. There is excellent machinery for adding rings and fields to Coq, meaning you can use built-in tactics to manipulate and solve goals involving your home-rolled ring or field. 
+Chapter one of LADR is about vector spaces. Vector spaces are defined over their underlying fields, so I knew that the very beginning of the project would deal with field theories. A field is a ring with division satisfying certain laws. A ring is a one and a zero with a way of adding, subtracting, and multiplying satisfying some laws. There is excellent machinery for adding rings and fields to Coq, meaning you can use built-in tactics to manipulate and solve goals involving your home-rolled ring or field. 
 
 I wanted this on stream, but I wanted slightly more: I also wanted the fact that something is a field to be a premise for forming a vector space. To do this, I used the machinery familiar to functional programmers as _typeclasses_, which are offered in Coq. 
 
@@ -21,7 +20,9 @@ I wanted to work with typeclasses, however, because I want to inherit lemmas abo
 
 One of the things I learned from starting some proofs in specific vectorspace instances, and then going on to focus on proofs at the typeclass-level, is that proving stuff at the typeclass level isn't especially harder than proving stuff at instance level. I.e., you might as well prove it at typeclass level! 
 
-After getting through section 1.A of the book (fields) and 1.B (vector spaces) and completing _most_ of the proofs (leaving `Admitted` peppered through the file, a reminder to come back and finish later), I decided to read ahead to section 1.C, on subspaces. I've made no decisions about how to formalize this yet, though I expect to use `Ensembles` (functions `V -> Prop`, a way of representing sets in type theory) and `Record`. The last 9 hours of this particular interval of 24 have been doing the exercises pen and paper. Yes, I will be taking hiati from writing coq to do pen and paper exercises. I should probably mention my math level: it is approximately the level such that it took me 9 hours to do the 24 exercises in section 1.C sans formalization. At linear algebra in particular, I have at least the literacy of an engineering major or data scientist, and I'm currently tutoring for a basic linear algebra section at a college. 
+After getting through section 1.A of the book (fields) and 1.B (vector spaces) and completing _most_ of the proofs (leaving `Admitted` peppered through the file, a reminder to come back and finish later), I decided to read ahead to section 1.C, on subspaces. I've made no decisions about how to formalize this yet, though I expect to use `Ensembles` (functions `V -> Prop`, a way of representing sets in type theory) and `Record`. The last 6 hours of this particular interval of 24 have been doing the exercises pen and paper. Yes, I will be taking hiati from writing coq to do pen and paper exercises. I should probably mention my math level: it is approximately the level such that it took me 6 hours to do the about 21 of the 24 exercises in section 1.C sans formalization. At linear algebra in particular, I have at least the literacy of an engineering major or data scientist, and I'm currently tutoring for a basic linear algebra section at a college. 
+
+Something I learned in the last few hours of this interval of 24 is that direct sums are difficult to work with and I do not enjoy working with them. I anticipate great difficulty in formalizing them. 
 
 ## Questions going into the next 24 hours. 
 
