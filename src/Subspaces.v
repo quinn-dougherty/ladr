@@ -1,1 +1,1 @@
-Require Import Classes.
+From VS Require Export Classes.

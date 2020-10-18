@@ -3,6 +3,9 @@ Require Import Field.
 Require Import Setoid.
 Require Import Classes.RelationClasses.
 Require Import Classes.Morphisms.
+Require Import Ensembles.
+Require Import Vector.
+
 
 Section VS.
 
@@ -108,11 +111,16 @@ Notation "⨪" := vainv : vectorspace_scope.
 Infix "⨪" := vminus (at level 50) : vectorspace_scope.
 Infix "==" := veq (at level 90) : vectorspace_scope.
 
-Record vectorspace_eq_ext : Prop := mk_vseqe {
-   vadd_ext : Proper (veq ==> veq ==> veq) vaddition;
-   (*vsmult_ext : Proper (veq ==> veq) vscalar_mult;*)
-   v0_ext : Proper veq v0;
- }.
+Record vectorspace_eq_ext : Prop
+  :=
+    mk_vseqe
+      {
+        vadd_ext : Proper ((fun u => fun v => u == v) ==> (fun u => fun v => u == v) ==> (fun u => fun v => u == v))
+                          (fun u => fun v => u ⨥ v);
+        vsmult_ext : Proper ((fun x => fun y => x = y) ==> (fun u => fun v => u == v) ==> (fun u => fun v => u == v))
+                            (fun (a : F) => fun (v : V) => a * v);
+        (*v0_ext : Proper (fun u => fun v => u == v) v0;*)
+}.
 
 
 Theorem veq_equiv_refl : forall (v : V), v == v.
@@ -356,14 +364,122 @@ Theorem zero_or (a : F) (u : V) :
 Proof.
 Admitted.
 
-End VS.
-
-Require Import Ensembles.
+(*End VS.
 
 Section Subspaces.
-
-
-Class Subspace {F V : Type} `{Field F} `{VectorSpace V} :=
+*)
+Record Subspace :=
   {
-  additive_ident :
+    set__subspace : Ensemble V;
+    additive_ident__subspace : set__subspace v0;
+    closed_addition__subspace :
+      forall (u w : V), set__subspace u -> set__subspace w -> set__subspace (u ⨥ w);
+    closed_smult__subspace :
+      forall (a : F) (u : V), set__subspace u -> set__subspace (a * u);
+  }.
+
+Definition biplus__subset (U W : Ensemble V) : Ensemble V :=
+  fun v => exists (u w : V), U u -> W w -> v == u ⨥ w.
+
+Definition empty_set : Ensemble V :=
+  fun u => False.
+
+Definition plus__subset {n : nat} (Un : t (Ensemble V) n) : Ensemble V :=
+  fold_left biplus__subset empty_set Un.
+
+Context (U W : Subspace).
+Infix "⨥" := (fun U1 => fun U2 => biplus__subset (set__subspace U1) (set__subspace U2)) (at level 50).
+
+
+
+Definition bi_smallest_containing_subspace (U W : Subspace) : Prop :=
+  Included V (set__subspace U) (biplus__subset (set__subspace U) (set__subspace W)) /\
+  Included V (set__subspace W) (biplus__subset (set__subspace U) (set__subspace W)) /\
+  (forall (X : Subspace),
+      Included V (set__subspace U) (set__subspace X) ->
+      Included V (set__subspace W) (set__subspace X) ->
+      Included V (biplus__subset (set__subspace U) (set__subspace W)) (set__subspace X)).
+
+Theorem smallest_containing_subspace2 : bi_smallest_containing_subspace U W.
+Proof.
+  unfold bi_smallest_containing_subspace, Included, Ensembles.In in *;
+    intros;
+    split;
+    try split;
+    intros.
+  - unfold biplus__subset.
+    exists x. exists v0.
+    intros.
+    rewrite vaddition_ident.
+    reflexivity.
+  - unfold biplus__subset.
+    exists v0. exists x.
+    intros.
+    rewrite vaddition_commu.
+    rewrite vaddition_ident.
+    reflexivity.
+  - unfold biplus__subset in H4; destruct H4 as [u [w H4]].
+    specialize (H2 (u ⨥ w)).
+    specialize (H3 (u ⨥ w)).
+Admitted.
+
+Theorem singleton_zero_closed_addition (u w : V) : u == v0 -> w == v0 -> u ⨥ w == v0.
+Proof.
+  intros.
+  rewrite H2.
+  rewrite H3.
+  rewrite vaddition_ident.
+  reflexivity.
+Qed.
+
+Theorem singleton_zero_closed_smult (a : F) (u : V) : u == v0 -> a * u == v0.
+Proof.
+  intros.
+Admitted.
+
+Definition singleton_zero : Subspace :=
+  {|
+  set__subspace := fun v => v == v0 ;
+  additive_ident__subspace := (veq_refl v0) ;
+  closed_addition__subspace := singleton_zero_closed_addition ;
+  closed_smult__subspace := singleton_zero_closed_smult
+  |}.
+
+Definition Directsum2'
+           (U1 U2 : Subspace)
+           (H : (forall (u1 u2 : V), set__subspace U1 u1 -> set__subspace U2 u2 ->
+                                u1 ⨥ u2 = v0 -> (u1 == v0) /\ (u2 == v0)))
+  : Subspace
+  :=
+
+    (*
+      function subspace -> subspace -> subspace
+      Proposition: subspace -> subspaces -> (a belief that zero can be written uniquely)
+     *)
+
+Record Directsum2 :=
+  {
+  U1 : Subspace;
+  U2 : Subspace;
+  zero_unique2 :
+    forall (u1 u2 : V), set__subspace U1 u1 -> set__subspace U2 u2 ->
+                   u1 ⨥ u2 = v0 -> (u1 == v0) /\ (u2 == v0)
+  }.
+
+(*1.45*)
+
+Theorem direct_sum_of_two_subspaces (U W : Subspace) :
+  Build_Directsum2 U W <-> Intersection V (set__subspace U) (set__subspace W) = singleton_zero.
+
+Record Directsum :=
+  {
+  n : nat;
+  Un : t Subspace n;
+  vn : t V n;
+  zero_unique :
+
   }
+
+
+
+End VS.
