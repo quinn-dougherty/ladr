@@ -8,6 +8,23 @@ Require Import Vector.
 Require Import Logic.FunctionalExtensionality.
 Require Import Logic.PropExtensionality.
 
+Fixpoint zipwith {A B C : Type} {n : nat}
+         (f : A -> B -> C) (v1 : t A n) (v2 : t B n) : t C n
+  := match v1 in t _ n return t B n -> t C n with
+     | nil _ => fun _ => nil C
+     | cons _ x1 _ v1' =>
+       fun v2 =>
+         cons _ (f x1 (hd v2)) _ (zipwith f v1' (tl v2))
+     end v2.
+
+Definition zip {A B C : Type} {n : nat} := @zipwith A B (A*B) n pair.
+
+Lemma nil_unique {A : Type} : forall (xs : t A 0), xs = nil A.
+Proof.
+  apply case0.
+  reflexivity.
+Qed.
+
 Section DEFINITIONS.
   Variable (F V : Type) (r0 r1 : F) (radd rmul rsub : F -> F -> F) (ropp : F -> F) (req : F -> F -> Prop).
   Variable (rdiv : F -> F -> F) (rinv : F -> F).
@@ -276,6 +293,7 @@ Section VECTORSPACE.
     a *v 0 = 0.
   Proof.
     destruct Vth.
+
   Admitted.
 
   Theorem vsmult_distr (a b : F) (x : V) : a *v (b *v x) ==v (a *r b) *v x.
@@ -295,11 +313,12 @@ Section VECTORSPACE.
     rewrite minus_one_squared.
     destruct Vth.
 
-    Admitted.
+  Admitted.
+
 End VECTORSPACE.
 
 Section SPAN.
- 
+
   Variable (F V : Type) (r0 r1 : F) (radd rmul rsub : F -> F -> F) (ropp : F -> F) (req : F -> F -> Prop).
   Variable (rdiv : F -> F -> F) (rinv : F -> F).
 
@@ -329,17 +348,6 @@ Section SPAN.
   Infix "*v" := vsmult (at level 40) : vectorspace_scope.
   Notation "-v" := (@vopp F V 1 ropp vsmult) (at level 30) : vectorspace_scope.
 
-  Fixpoint zipwith {A B C : Type} {n : nat}
-           (f : A -> B -> C) (v1 : t A n) (v2 : t B n) : t C n
-    := match v1 in t _ n return t B n -> t C n with
-       | nil _ => fun _ => nil C
-       | cons _ x1 _ v1' =>
-         fun v2 =>
-           cons _ (f x1 (hd v2)) _ (zipwith f v1' (tl v2))
-       end v2.
-
-  Definition zip {A B C : Type} {n : nat} := @zipwith A B (A*B) n pair.
-
   (*2.5*)
   Definition span {n : nat} (xs : t V n) : V -> Prop
     :=
@@ -350,11 +358,6 @@ Section SPAN.
     :=
       span xs = Full_set V.
 
-  Lemma nil_unique {A : Type} : forall (xs : t A 0), xs = nil A.
-  Proof.
-    apply case0.
-    reflexivity.
-  Qed.
 
   (*2.5*)
   Theorem span_empty_zero : span (@nil V) = fun x => x ==v 0.
@@ -377,3 +380,92 @@ Section SPAN.
 
 
 End SPAN.
+
+Section LINEAR_INDEPENDENCE.
+
+  Variable (F V : Type) (r0 r1 : F) (radd rmul rsub : F -> F -> F) (ropp : F -> F) (req : F -> F -> Prop).
+  Variable (rdiv : F -> F -> F) (rinv : F -> F).
+
+  Declare Scope field_scope.
+  Delimit Scope field_scope with fieldsc.
+  Open Scope field_scope.
+
+  Notation "0" := r0 : field_scope.
+  Notation "1" := r1 : field_scope.
+  Infix "==r" := req (at level 90) : field_scope.
+  Infix "+r" := radd (at level 50) : field_scope.
+  Infix "*r" := rmul (at level 40) : field_scope.
+  Infix "-r" := rsub (at level 50) : field_scope.
+  Notation "-r" := ropp (at level 30) : field_scope.
+  Infix "/r" := rdiv (at level 40) : field_scope.
+  Notation "/r" := rinv (at level 30) : field_scope.
+
+  Variable (vadd : V -> V -> V) (vsmult : F -> V -> V) (v0 : V) (veq : V -> V -> Prop).
+
+  Declare Scope vectorspace_scope.
+  Delimit Scope vectorspace_scope with vecsc.
+  Open Scope vectorspace_scope.
+
+  Notation "0" := v0 : vectorspace_scope.
+  Infix "==v" := veq (at level 90) : vectorspace_scope.
+  Infix "+v" := vadd (at level 50) : vectorspace_scope.
+  Infix "*v" := vsmult (at level 40) : vectorspace_scope.
+  Notation "-v" := (vopp 1 ropp vsmult) (at level 30) : vectorspace_scope.
+
+  (*2.17*)
+  Definition linearly_independent {n : nat} (xs : t V n) : Prop :=
+    forall (ys : t F n),
+      fold_left vadd 0 (zipwith vsmult ys xs) ==v 0 ->
+      Forall (fun y => y ==r 0%fieldsc) ys.
+
+  (*2.17 b*)
+  Theorem empty_independent : linearly_independent (@nil V).
+  Proof.
+    unfold linearly_independent; intros.
+    specialize (nil_unique ys); intros.
+    rewrite H0.
+    apply Forall_nil.
+  Qed.
+
+  (*2.19*)
+  Definition linearly_dependent {n : nat} (xs : t V n) : Prop :=
+    exists (ys : t F n),
+      Exists (fun y => y <> 0%fieldsc) ys -> fold_left vadd 0 (zipwith vsmult ys xs) ==v 0.
+
+
+  Definition three_zeros : t V 3 :=
+    (cons V 0 2 (cons V 0 1 (cons V 0 0 (nil V)))).
+(*)
+  Definition coprojection {A : Type} {n : nat} (v : t A n) (j : nat) (H : j < n) : t A (n-1) :=
+    (*[x for i, x in enumerate(xs) if i != j]*)
+    take (n-1) v.
+*)
+  Check nth_order (cons V 0 2 (cons V 0 1 (cons V 0 0 (nil V)))).
+  Definition a_leq_prop := 5 <= 7.
+
+  (*2.21*)
+  Theorem linear_dependence_lemma1 {n : nat} (xs : t V n) (H : linearly_dependent xs) :
+    exists (j : nat),
+    forall (H0 : j <= n) (H1 : j < n),
+      (@span F V vadd vsmult 0 veq j (take j H0 xs) (nth_order xs H1)).
+  Proof.
+    exists 1%nat.
+    intros.
+    induction xs.
+    - inversion H0.
+    - simpl.
+      unfold linearly_dependent in H.
+      destruct H as [ys H].
+      unfold span.
+     
+  Admitted.
+
+  (*2.23*)
+  Theorem length_linearly_independent_list_leq_length_spanning_list {n m : nat} :
+    forall (xs : t V n) (xs' : t V m),
+      linearly_independent xs -> spans F V vadd vsmult 0 veq xs' -> n <= m.
+  Proof.
+    intros.
+    unfold linearly_independent in H.
+    unfold spans, span in H0.
+  Admitted.
