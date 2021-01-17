@@ -1,0 +1,479 @@
+DIGEST 164f656dfc8c6e991ac4e8920e013249
+FLADR.VectorSpace
+R15:18 Coq.setoid_ring.Ring <> <> lib
+R36:40 Coq.setoid_ring.Field <> <> lib
+R58:63 Coq.Setoids.Setoid <> <> lib
+R81:103 Coq.Classes.RelationClasses <> <> lib
+R121:137 Coq.Classes.Morphisms <> <> lib
+mod 156:166 <> DEFINITIONS
+ax 181:181 DEFINITIONS F
+ax 183:183 DEFINITIONS V
+ax 194:195 DEFINITIONS r0
+ax 197:198 DEFINITIONS r1
+ax 206:209 DEFINITIONS radd
+ax 211:214 DEFINITIONS rmul
+ax 216:219 DEFINITIONS rsub
+ax 237:240 DEFINITIONS ropp
+R202:202 LADR.VectorSpace <> F:2 var
+R224:227 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R229:232 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R233:233 LADR.VectorSpace <> F:2 var
+R228:228 LADR.VectorSpace <> F:2 var
+R223:223 LADR.VectorSpace <> F:2 var
+R245:248 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R249:249 LADR.VectorSpace <> F:2 var
+R244:244 LADR.VectorSpace <> F:2 var
+ax 304:307 DEFINITIONS rdiv
+ax 325:328 DEFINITIONS rinv
+R312:315 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R317:320 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R321:321 LADR.VectorSpace DEFINITIONS F defax
+R316:316 LADR.VectorSpace DEFINITIONS F defax
+R311:311 LADR.VectorSpace DEFINITIONS F defax
+R333:336 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R337:337 LADR.VectorSpace DEFINITIONS F defax
+R332:332 LADR.VectorSpace DEFINITIONS F defax
+R465:466 LADR.VectorSpace DEFINITIONS r0 defax
+not 458:458 DEFINITIONS ::field_scope:'0'
+R508:509 LADR.VectorSpace DEFINITIONS r1 defax
+not 501:501 DEFINITIONS ::field_scope:'1'
+R610:613 LADR.VectorSpace DEFINITIONS radd defax
+not 602:602 DEFINITIONS ::field_scope:x_'+r'_x
+R667:670 LADR.VectorSpace DEFINITIONS rmul defax
+not 659:659 DEFINITIONS ::field_scope:x_'*r'_x
+R724:727 LADR.VectorSpace DEFINITIONS rsub defax
+not 716:716 DEFINITIONS ::field_scope:x_'-r'_x
+R784:787 LADR.VectorSpace DEFINITIONS ropp defax
+not 776:776 DEFINITIONS ::field_scope:'-r'
+R841:844 LADR.VectorSpace DEFINITIONS rdiv defax
+not 833:833 DEFINITIONS ::field_scope:x_'/r'_x
+R901:904 LADR.VectorSpace DEFINITIONS rinv defax
+not 893:893 DEFINITIONS ::field_scope:'/r'
+ax 948:951 DEFINITIONS vadd
+ax 969:974 DEFINITIONS vsmult
+ax 992:993 DEFINITIONS v0
+R956:959 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R961:964 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R965:965 LADR.VectorSpace DEFINITIONS V defax
+R960:960 LADR.VectorSpace DEFINITIONS V defax
+R955:955 LADR.VectorSpace DEFINITIONS V defax
+R979:982 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R984:987 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R988:988 LADR.VectorSpace DEFINITIONS V defax
+R983:983 LADR.VectorSpace DEFINITIONS V defax
+R978:978 LADR.VectorSpace DEFINITIONS F defax
+R997:997 LADR.VectorSpace DEFINITIONS V defax
+R1173:1174 LADR.VectorSpace DEFINITIONS v0 defax
+not 1166:1166 DEFINITIONS ::vectorspace_scope:'0'
+R1273:1276 LADR.VectorSpace DEFINITIONS vadd defax
+not 1265:1265 DEFINITIONS ::vectorspace_scope:x_'+v'_x
+R1329:1334 LADR.VectorSpace DEFINITIONS vsmult defax
+not 1321:1321 DEFINITIONS ::vectorspace_scope:x_'*v'_x
+def 1384:1387 DEFINITIONS vopp
+R1394:1394 LADR.VectorSpace DEFINITIONS V defax
+binder 1390:1390 <> x:14
+R1399:1399 LADR.VectorSpace DEFINITIONS V defax
+R1404:1404 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1409:1413 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1405:1408 LADR.VectorSpace DEFINITIONS ::field_scope:'-r' not
+R1414:1414 LADR.VectorSpace <> x:14 var
+R1436:1439 LADR.VectorSpace DEFINITIONS vopp def
+not 1428:1428 DEFINITIONS ::vectorspace_scope:'-v'
+constr 1534:1539 DEFINITIONS mk_vst
+rec 1497:1514 DEFINITIONS vectorspace_theory
+proj 1563:1571 DEFINITIONS vadd_comm
+proj 1621:1630 DEFINITIONS vadd_assoc
+proj 1696:1705 DEFINITIONS vadd_ident
+proj 1748:1755 DEFINITIONS vadd_inv
+proj 1814:1825 DEFINITIONS vsmult_ident
+proj 1868:1874 DEFINITIONS vdistr1
+proj 1953:1959 DEFINITIONS vdistr2
+R1589:1589 LADR.VectorSpace DEFINITIONS V defax
+binder 1583:1583 <> x:16
+binder 1585:1585 <> y:17
+R1599:1601 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1594:1597 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1593:1593 LADR.VectorSpace <> x:16 var
+R1598:1598 LADR.VectorSpace <> y:17 var
+R1603:1606 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1602:1602 LADR.VectorSpace <> y:17 var
+R1607:1607 LADR.VectorSpace <> x:16 var
+R1650:1650 LADR.VectorSpace DEFINITIONS V defax
+binder 1642:1642 <> x:19
+binder 1644:1644 <> y:20
+binder 1646:1646 <> z:21
+R1667:1669 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1654:1654 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1661:1665 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1656:1659 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1655:1655 LADR.VectorSpace <> x:19 var
+R1660:1660 LADR.VectorSpace <> y:20 var
+R1666:1666 LADR.VectorSpace <> z:21 var
+R1671:1675 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1682:1682 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1670:1670 LADR.VectorSpace <> x:19 var
+R1677:1680 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1676:1676 LADR.VectorSpace <> y:20 var
+R1681:1681 LADR.VectorSpace <> z:21 var
+R1721:1721 LADR.VectorSpace DEFINITIONS V defax
+binder 1717:1717 <> x:23
+R1731:1733 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1726:1729 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1725:1725 LADR.VectorSpace <> x:23 var
+R1734:1734 LADR.VectorSpace <> x:23 var
+R1771:1771 LADR.VectorSpace DEFINITIONS V defax
+binder 1767:1767 <> x:25
+R1775:1782 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1788:1790 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1787:1787 LADR.VectorSpace DEFINITIONS V defax
+binder 1783:1783 <> y:26
+R1797:1799 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1792:1795 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1791:1791 LADR.VectorSpace <> x:25 var
+R1796:1796 LADR.VectorSpace <> y:26 var
+R1841:1841 LADR.VectorSpace DEFINITIONS V defax
+binder 1837:1837 <> x:28
+R1851:1853 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1846:1849 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1850:1850 LADR.VectorSpace <> x:28 var
+R1854:1854 LADR.VectorSpace <> x:28 var
+R1890:1890 LADR.VectorSpace DEFINITIONS F defax
+binder 1886:1886 <> a:30
+R1900:1900 LADR.VectorSpace DEFINITIONS V defax
+binder 1894:1894 <> x:31
+binder 1896:1896 <> y:32
+R1917:1919 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1905:1909 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1916:1916 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1904:1904 LADR.VectorSpace <> a:30 var
+R1911:1914 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1910:1910 LADR.VectorSpace <> x:31 var
+R1915:1915 LADR.VectorSpace <> y:32 var
+R1920:1920 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1927:1932 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1939:1939 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R1922:1925 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1921:1921 LADR.VectorSpace <> a:30 var
+R1926:1926 LADR.VectorSpace <> x:31 var
+R1934:1937 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1933:1933 LADR.VectorSpace <> a:30 var
+R1938:1938 LADR.VectorSpace <> y:32 var
+R1977:1977 LADR.VectorSpace DEFINITIONS F defax
+binder 1971:1971 <> a:34
+binder 1973:1973 <> b:35
+R1985:1985 LADR.VectorSpace DEFINITIONS V defax
+binder 1981:1981 <> x:36
+R2002:2004 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1989:1989 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1996:2000 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R1991:1994 LADR.VectorSpace DEFINITIONS ::field_scope:x_'+r'_x not
+R1990:1990 LADR.VectorSpace <> a:34 var
+R1995:1995 LADR.VectorSpace <> b:35 var
+R2001:2001 LADR.VectorSpace <> x:36 var
+R2005:2005 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R2012:2017 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R2024:2024 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R2007:2010 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R2006:2006 LADR.VectorSpace <> a:34 var
+R2011:2011 LADR.VectorSpace <> x:36 var
+R2019:2022 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R2018:2018 LADR.VectorSpace <> b:35 var
+R2023:2023 LADR.VectorSpace <> x:36 var
+constr 2080:2086 DEFINITIONS mk_veqe
+rec 2049:2058 DEFINITIONS vec_eq_ext
+proj 2100:2107 DEFINITIONS vadd_ext
+proj 2153:2162 DEFINITIONS vsmult_ext
+R2111:2116 Coq.Classes.Morphisms <> Proper class
+R2137:2140 LADR.VectorSpace DEFINITIONS vadd defax
+R2121:2125 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R2119:2120 Coq.Init.Logic <> eq ind
+R2128:2132 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R2126:2127 Coq.Init.Logic <> eq ind
+R2133:2134 Coq.Init.Logic <> eq ind
+R2166:2171 Coq.Classes.Morphisms <> Proper class
+R2192:2197 LADR.VectorSpace DEFINITIONS vsmult defax
+R2176:2180 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R2174:2175 Coq.Init.Logic <> eq ind
+R2183:2187 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R2181:2182 Coq.Init.Logic <> eq ind
+R2188:2189 Coq.Init.Logic <> eq ind
+sec 2222:2229 DEFINITIONS MORPHISM
+var 2246:2246 DEFINITIONS.MORPHISM W
+var 2248:2248 DEFINITIONS.MORPHISM G
+var 2259:2260 DEFINITIONS.MORPHISM w0
+var 2268:2271 DEFINITIONS.MORPHISM wadd
+var 2289:2294 DEFINITIONS.MORPHISM wsmult
+R2264:2264 LADR.VectorSpace <> W:42 var
+R2276:2279 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2281:2284 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2285:2285 LADR.VectorSpace <> W:42 var
+R2280:2280 LADR.VectorSpace <> W:42 var
+R2275:2275 LADR.VectorSpace <> W:42 var
+R2299:2302 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2304:2307 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2308:2308 LADR.VectorSpace <> W:42 var
+R2303:2303 LADR.VectorSpace <> W:42 var
+R2298:2298 LADR.VectorSpace <> G:41 var
+var 2326:2329 DEFINITIONS.MORPHISM weqb
+var 2350:2355 DEFINITIONS.MORPHISM phi__W
+var 2368:2373 DEFINITIONS.MORPHISM phi__G
+R2334:2337 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2339:2342 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2343:2346 Coq.Init.Datatypes <> bool ind
+R2338:2338 LADR.VectorSpace <> DEFINITIONS.MORPHISM.W var
+R2333:2333 LADR.VectorSpace <> DEFINITIONS.MORPHISM.W var
+R2360:2363 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2364:2364 LADR.VectorSpace DEFINITIONS V defax
+R2359:2359 LADR.VectorSpace <> DEFINITIONS.MORPHISM.W var
+R2378:2381 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2382:2382 LADR.VectorSpace DEFINITIONS F defax
+R2377:2377 LADR.VectorSpace <> DEFINITIONS.MORPHISM.G var
+R2404:2407 LADR.VectorSpace <> DEFINITIONS.MORPHISM.wadd var
+not 2396:2396 DEFINITIONS.MORPHISM :::x_'+!'_x
+R2442:2447 LADR.VectorSpace <> DEFINITIONS.MORPHISM.wsmult var
+not 2434:2434 DEFINITIONS.MORPHISM :::x_'*!'_x
+R2483:2486 LADR.VectorSpace <> DEFINITIONS.MORPHISM.weqb var
+not 2474:2474 DEFINITIONS.MORPHISM :::x_'?=!'_x
+constr 2557:2565 DEFINITIONS mk_vmorph
+rec 2515:2531 DEFINITIONS vectorspace_morph
+proj 2581:2588 DEFINITIONS morph_v0
+proj 2619:2628 DEFINITIONS morph_vadd
+proj 2696:2707 DEFINITIONS morph_vsmult
+proj 2775:2783 DEFINITIONS morph_veq
+R2601:2603 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2592:2597 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__W var
+R2599:2600 LADR.VectorSpace <> DEFINITIONS.MORPHISM.w0 var
+binder 2639:2639 <> u:51
+binder 2641:2641 <> v:52
+R2659:2661 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2644:2649 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__W var
+R2653:2656 LADR.VectorSpace DEFINITIONS.MORPHISM :::x_'+!'_x not
+R2652:2652 LADR.VectorSpace <> u:51 var
+R2657:2657 LADR.VectorSpace <> v:52 var
+R2670:2673 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R2662:2667 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__W var
+R2669:2669 LADR.VectorSpace <> u:51 var
+R2674:2679 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__W var
+R2681:2681 LADR.VectorSpace <> v:52 var
+binder 2718:2718 <> a:54
+binder 2720:2720 <> v:55
+R2738:2740 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2723:2728 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__W var
+R2732:2735 LADR.VectorSpace DEFINITIONS.MORPHISM :::x_'*!'_x not
+R2731:2731 LADR.VectorSpace <> a:54 var
+R2736:2736 LADR.VectorSpace <> v:55 var
+R2749:2752 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R2741:2746 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__G var
+R2748:2748 LADR.VectorSpace <> a:54 var
+R2753:2758 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__W var
+R2760:2760 LADR.VectorSpace <> v:55 var
+binder 2794:2794 <> u:57
+binder 2796:2796 <> v:58
+R2815:2818 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2827:2829 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2819:2824 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__W var
+R2826:2826 LADR.VectorSpace <> u:57 var
+R2830:2835 LADR.VectorSpace <> DEFINITIONS.MORPHISM.phi__W var
+R2837:2837 LADR.VectorSpace <> v:58 var
+R2799:2799 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2807:2810 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2801:2805 LADR.VectorSpace DEFINITIONS.MORPHISM :::x_'?=!'_x not
+R2800:2800 LADR.VectorSpace <> u:57 var
+R2806:2806 LADR.VectorSpace <> v:58 var
+R2811:2814 Coq.Init.Datatypes <> true constr
+R2859:2866 LADR.VectorSpace DEFINITIONS.MORPHISM <> sec
+ax 2910:2913 DEFINITIONS Vsth
+R2917:2927 Coq.Classes.RelationClasses <> Equivalence class
+R2931:2932 Coq.Init.Logic <> eq ind
+R2934:2934 LADR.VectorSpace DEFINITIONS V defax
+ax 2949:2952 DEFINITIONS veqb
+R2957:2960 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2962:2965 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2966:2969 Coq.Init.Datatypes <> bool ind
+R2961:2961 LADR.VectorSpace DEFINITIONS V defax
+R2956:2956 LADR.VectorSpace DEFINITIONS V defax
+ax 2986:2995 DEFINITIONS morph_veq'
+binder 3006:3006 <> x:62
+binder 3008:3008 <> y:63
+R3028:3031 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3033:3035 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3032:3032 LADR.VectorSpace <> x:62 var
+R3036:3036 LADR.VectorSpace <> y:63 var
+R3011:3011 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3020:3023 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3012:3015 LADR.VectorSpace DEFINITIONS veqb defax
+R3019:3019 LADR.VectorSpace <> y:63 var
+R3017:3017 LADR.VectorSpace <> x:62 var
+R3024:3027 Coq.Init.Datatypes <> true constr
+def 3052:3059 DEFINITIONS IDphi__V
+R3066:3066 LADR.VectorSpace DEFINITIONS V defax
+binder 3062:3062 <> x:65
+R3072:3072 LADR.VectorSpace <> x:65 var
+def 3088:3095 DEFINITIONS IDphi__F
+R3102:3102 LADR.VectorSpace DEFINITIONS F defax
+binder 3098:3098 <> x:66
+R3108:3108 LADR.VectorSpace <> x:66 var
+prf 3120:3126 DEFINITIONS IDmorph
+R3130:3146 LADR.VectorSpace DEFINITIONS vectorspace_morph rec
+R3180:3187 LADR.VectorSpace DEFINITIONS IDphi__F def
+R3171:3178 LADR.VectorSpace DEFINITIONS IDphi__V def
+R3166:3169 LADR.VectorSpace DEFINITIONS veqb defax
+R3159:3164 LADR.VectorSpace DEFINITIONS vsmult defax
+R3154:3157 LADR.VectorSpace DEFINITIONS vadd defax
+R3150:3150 LADR.VectorSpace DEFINITIONS F defax
+R3148:3148 LADR.VectorSpace DEFINITIONS V defax
+R3254:3263 LADR.VectorSpace DEFINITIONS morph_veq' prfax
+R3254:3263 LADR.VectorSpace DEFINITIONS morph_veq' prfax
+R3290:3300 LADR.VectorSpace DEFINITIONS <> mod
+modtype 3316:3326 <> VECTORSPACE
+R3339:3349 LADR.VectorSpace DEFINITIONS <> modtype
+ax 3411:3413 VECTORSPACE Fth
+R3417:3428 Coq.setoid_ring.Field_theory <> field_theory rec
+R3472:3473 Coq.Init.Logic <> eq ind
+R3467:3470 LADR.VectorSpace VECTORSPACE rinv defax
+R3462:3465 LADR.VectorSpace VECTORSPACE rdiv defax
+R3457:3460 LADR.VectorSpace VECTORSPACE ropp defax
+R3452:3455 LADR.VectorSpace VECTORSPACE rsub defax
+R3447:3450 LADR.VectorSpace VECTORSPACE rmul defax
+R3442:3445 LADR.VectorSpace VECTORSPACE radd defax
+def 3489:3491 VECTORSPACE Rth
+R3496:3498 Coq.setoid_ring.Field_theory <> F_R proj
+R3500:3502 LADR.VectorSpace VECTORSPACE Fth defax
+prf 3514:3519 VECTORSPACE Eqfsth
+R3523:3533 Coq.Classes.RelationClasses <> Equivalence class
+R3537:3538 Coq.Init.Logic <> eq ind
+R3540:3540 LADR.VectorSpace VECTORSPACE F defax
+prf 3690:3696 VECTORSPACE REq_ext
+R3700:3710 Coq.setoid_ring.Ring_theory <> ring_eq_ext rec
+R3729:3730 Coq.Init.Logic <> eq ind
+R3732:3732 LADR.VectorSpace VECTORSPACE F defax
+R3722:3725 LADR.VectorSpace VECTORSPACE ropp defax
+R3717:3720 LADR.VectorSpace VECTORSPACE rmul defax
+R3712:3715 LADR.VectorSpace VECTORSPACE radd defax
+R3842:3844 LADR.VectorSpace VECTORSPACE Rth def
+R3868:3870 LADR.VectorSpace VECTORSPACE Fth defax
+prf 3949:3954 VECTORSPACE Eqvsth
+R3958:3968 Coq.Classes.RelationClasses <> Equivalence class
+R3972:3973 Coq.Init.Logic <> eq ind
+R3975:3975 LADR.VectorSpace VECTORSPACE V defax
+R4138:4141 LADR.VectorSpace VECTORSPACE vadd defax
+R4161:4165 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R4159:4160 Coq.Init.Logic <> eq ind
+R4168:4172 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R4166:4167 Coq.Init.Logic <> eq ind
+R4173:4174 Coq.Init.Logic <> eq ind
+R4248:4253 LADR.VectorSpace VECTORSPACE vsmult defax
+R4273:4277 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R4271:4272 Coq.Init.Logic <> eq ind
+R4280:4284 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R4278:4279 Coq.Init.Logic <> eq ind
+R4285:4286 Coq.Init.Logic <> eq ind
+ax 4358:4360 VECTORSPACE Vth
+R4364:4381 LADR.VectorSpace VECTORSPACE vectorspace_theory rec
+prf 4393:4405 VECTORSPACE radd_inv_zero
+R4412:4412 LADR.VectorSpace VECTORSPACE F defax
+binder 4408:4408 <> x:69
+R4428:4430 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4418:4422 LADR.VectorSpace DEFINITIONS ::field_scope:x_'+r'_x not
+R4427:4427 LADR.VectorSpace DEFINITIONS ::field_scope:x_'+r'_x not
+R4417:4417 LADR.VectorSpace <> x:69 var
+R4423:4426 LADR.VectorSpace DEFINITIONS ::field_scope:'-r' not
+R4426:4426 LADR.VectorSpace <> x:69 var
+R4464:4466 LADR.VectorSpace VECTORSPACE Rth def
+prf 4556:4569 VECTORSPACE ropp_zero_zero
+R4585:4587 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4573:4584 LADR.VectorSpace DEFINITIONS ::field_scope:'-r' not
+prf 4634:4647 VECTORSPACE add_both_sides
+R4658:4658 LADR.VectorSpace VECTORSPACE V defax
+binder 4650:4650 <> u:70
+binder 4652:4652 <> v:71
+binder 4654:4654 <> w:72
+R4668:4671 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4678:4680 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4673:4676 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R4672:4672 LADR.VectorSpace <> w:72 var
+R4677:4677 LADR.VectorSpace <> u:70 var
+R4682:4685 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R4681:4681 LADR.VectorSpace <> w:72 var
+R4686:4686 LADR.VectorSpace <> v:71 var
+R4664:4666 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4663:4663 LADR.VectorSpace <> u:70 var
+R4667:4667 LADR.VectorSpace <> v:71 var
+prf 4758:4776 VECTORSPACE subtract_both_sides
+R4787:4787 LADR.VectorSpace VECTORSPACE V defax
+binder 4779:4779 <> u:73
+binder 4781:4781 <> v:74
+binder 4783:4783 <> w:75
+R4807:4810 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4812:4814 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4811:4811 LADR.VectorSpace <> u:73 var
+R4815:4815 LADR.VectorSpace <> v:74 var
+R4798:4800 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4793:4796 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R4792:4792 LADR.VectorSpace <> w:75 var
+R4797:4797 LADR.VectorSpace <> u:73 var
+R4802:4805 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'+v'_x not
+R4801:4801 LADR.VectorSpace <> w:75 var
+R4806:4806 LADR.VectorSpace <> v:74 var
+prf 4873:4889 VECTORSPACE zero_times_vector
+R4896:4896 LADR.VectorSpace VECTORSPACE V defax
+binder 4892:4892 <> x:76
+R4919:4921 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4914:4917 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R4918:4918 LADR.VectorSpace <> x:76 var
+R4947:4949 LADR.VectorSpace VECTORSPACE Rth def
+R5002:5004 LADR.VectorSpace VECTORSPACE Vth defax
+R5088:5091 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5088:5091 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5175:5188 LADR.VectorSpace VECTORSPACE add_both_sides thm
+R5204:5207 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5175:5188 LADR.VectorSpace VECTORSPACE add_both_sides thm
+R5204:5207 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+prf 5248:5264 VECTORSPACE number_times_zero
+R5271:5271 LADR.VectorSpace VECTORSPACE F defax
+binder 5267:5267 <> a:77
+R5286:5288 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5281:5284 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5280:5280 LADR.VectorSpace <> a:77 var
+R5314:5316 LADR.VectorSpace VECTORSPACE Vth defax
+prf 5343:5354 VECTORSPACE vsmult_distr
+R5363:5363 LADR.VectorSpace VECTORSPACE F defax
+binder 5357:5357 <> a:78
+binder 5359:5359 <> b:79
+R5371:5371 LADR.VectorSpace VECTORSPACE V defax
+binder 5367:5367 <> x:80
+R5389:5391 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5377:5381 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5388:5388 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5376:5376 LADR.VectorSpace <> a:78 var
+R5383:5386 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5382:5382 LADR.VectorSpace <> b:79 var
+R5387:5387 LADR.VectorSpace <> x:80 var
+R5392:5392 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5399:5403 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:x_'*v'_x not
+R5394:5397 LADR.VectorSpace DEFINITIONS ::field_scope:x_'*r'_x not
+R5393:5393 LADR.VectorSpace <> a:78 var
+R5398:5398 LADR.VectorSpace <> b:79 var
+R5404:5404 LADR.VectorSpace <> x:80 var
+prf 5437:5453 VECTORSPACE minus_one_squared
+R5469:5471 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5461:5464 LADR.VectorSpace DEFINITIONS ::field_scope:x_'*r'_x not
+R5457:5460 LADR.VectorSpace DEFINITIONS ::field_scope:'-r' not
+R5465:5468 LADR.VectorSpace DEFINITIONS ::field_scope:'-r' not
+prf 5533:5547 VECTORSPACE vopp_involutive
+R5554:5554 LADR.VectorSpace VECTORSPACE V defax
+binder 5550:5550 <> x:81
+R5568:5570 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5559:5567 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:'-v' not
+R5563:5566 LADR.VectorSpace DEFINITIONS ::vectorspace_scope:'-v' not
+R5566:5566 LADR.VectorSpace <> x:81 var
+R5571:5571 LADR.VectorSpace <> x:81 var
+R5594:5597 LADR.VectorSpace VECTORSPACE vopp def
+R5612:5623 LADR.VectorSpace VECTORSPACE vsmult_distr prfax
+R5612:5623 LADR.VectorSpace VECTORSPACE vsmult_distr prfax
+R5612:5623 LADR.VectorSpace VECTORSPACE vsmult_distr prfax
+R5638:5654 LADR.VectorSpace VECTORSPACE minus_one_squared thm
+R5638:5654 LADR.VectorSpace VECTORSPACE minus_one_squared thm
+R5638:5654 LADR.VectorSpace VECTORSPACE minus_one_squared thm
+R5670:5672 LADR.VectorSpace VECTORSPACE Vth defax
+R5712:5722 LADR.VectorSpace VECTORSPACE <> modtype

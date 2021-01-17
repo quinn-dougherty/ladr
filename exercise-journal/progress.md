@@ -21,3 +21,8 @@
 15 i guess
 18 (very interesting)
 19 
+
+# Section 2.A
+### skipped: 
+4
+11

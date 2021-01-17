@@ -25,7 +25,7 @@ Proof.
   reflexivity.
 Qed.
 
-Section DEFINITIONS.
+Module Export DEFINITIONS.
   Variable (F V : Type) (r0 r1 : F) (radd rmul rsub : F -> F -> F) (ropp : F -> F) (req : F -> F -> Prop).
   Variable (rdiv : F -> F -> F) (rinv : F -> F).
 
@@ -33,15 +33,15 @@ Section DEFINITIONS.
   Delimit Scope field_scope with fieldsc.
   Open Scope field_scope.
 
-  Notation "0" := r0 : field_scope.
-  Notation "1" := r1 : field_scope.
-  Infix "==r" := req (at level 90) : field_scope.
-  Infix "+r" := radd (at level 50) : field_scope.
-  Infix "*r" := rmul (at level 40) : field_scope.
-  Infix "-r" := rsub (at level 50) : field_scope.
-  Notation "-r" := ropp (at level 30) : field_scope.
-  Infix "/r" := rdiv (at level 40) : field_scope.
-  Notation "/r" := rinv (at level 30) : field_scope.
+  Global Notation "0" := r0 : field_scope.
+  Global Notation "1" := r1 : field_scope.
+  Global Infix "==r" := req (at level 90) : field_scope.
+  Global Infix "+r" := radd (at level 50) : field_scope.
+  Global Infix "*r" := rmul (at level 40) : field_scope.
+  Global Infix "-r" := rsub (at level 50) : field_scope.
+  Global Notation "-r" := ropp (at level 30) : field_scope.
+  Global Infix "/r" := rdiv (at level 40) : field_scope.
+  Global Notation "/r" := rinv (at level 30) : field_scope.
 
   Variable (vadd : V -> V -> V) (vsmult : F -> V -> V) (v0 : V) (veq : V -> V -> Prop).
 
@@ -97,7 +97,8 @@ Section DEFINITIONS.
   (*Identity is a morphism*)
   Variable Vsth : Equivalence veq.
   Variable veqb : V -> V -> bool.
-  Hypothesis morph_veq : forall x y, (veqb x y) = true -> x ==v y.
+
+  Hypothesis morph_veq' : forall x y, (veqb x y) = true -> x ==v y.
   Definition IDphi__V (x : V) := x.
   Definition IDphi__F (x : F) := x.
 
@@ -109,34 +110,20 @@ Section DEFINITIONS.
     - reflexivity.
     - apply Equivalence_Reflexive.
     - apply Equivalence_Reflexive.
-    - apply morph_veq.
+    - apply morph_veq'.
       apply H.
   Qed.
 
-End DEFINITIONS.
+(*End DEFINITIONS.*)
 
-Section VECTORSPACE.
-  Variable (F V : Type).
-  Variable (r0 r1 : F) (radd rmul rsub : F -> F -> F) (ropp : F -> F) (req : F -> F -> Prop).
-  Variable (rdiv : F -> F -> F) (rinv : F -> F).
+(*Module VECTORSPACE.*)
+  (*Include DEFINITIONS.*)
 
-  Declare Scope field_scope.
-  Delimit Scope field_scope with fieldsc.
+  (*Delimit Scope field_scope with fieldsc.*)
   Open Scope field_scope.
 
-  Notation "0" := r0 : field_scope.
-  Notation "1" := r1 : field_scope.
-  Infix "==r" := req (at level 90) : field_scope.
-  Infix "+r" := radd (at level 50) : field_scope.
-  Infix "*r" := rmul (at level 40) : field_scope.
-  Infix "-r" := rsub (at level 50) : field_scope.
-  Notation "-r" := ropp (at level 30) : field_scope.
-  Infix "/r" := rdiv (at level 40) : field_scope.
-  Notation "/r" := rinv (at level 30) : field_scope.
-
-  (*Variable Rth : ring_theory 0 1 radd rmul rsub ropp req.*)
   Variable Fth : field_theory 0 1 radd rmul rsub ropp rdiv rinv req.
-  Let Rth := (F_R Fth).
+  Definition Rth := F_R Fth.
 
   Lemma Eqfsth : Equivalence (@eq F).
   Proof.
@@ -154,8 +141,6 @@ Section VECTORSPACE.
 
   Variable Rsth : Equivalence req.
   Variable reqe : ring_eq_ext radd rmul ropp req.
-
-  Check ring_morph.
 
   Add Morphism radd with signature (req ==> req ==> req) as radd_ext1.
   Proof.
@@ -187,7 +172,8 @@ Section VECTORSPACE.
   Add Morphism rinv with signature (req ==> req) as finv_ext1.
   Proof.
     intros.
-   
+    destruct reqe.
+
   Admitted.
 
   Add Ring FRing : Rth.
@@ -195,8 +181,7 @@ Section VECTORSPACE.
 
   Variable (vadd : V -> V -> V) (vsmult : F -> V -> V) (v0 : V) (veq : V -> V -> Prop).
 
-  Declare Scope vectorspace_scope.
-  Delimit Scope vectorspace_scope with vecsc.
+  (*Delimit Scope vectorspace_scope with vecsc.*)
   Open Scope vectorspace_scope.
 
   Notation "0" := v0 : vectorspace_scope.
@@ -285,7 +270,6 @@ Section VECTORSPACE.
     rewrite <- vadd_inv0.
     apply (add_both_sides _ _ (0%fieldsc *v x)).
     rewrite vsmult_ident0.
-
   Admitted.
 
   (*1.30*)
@@ -378,6 +362,10 @@ Section SPAN.
       apply H.
     Qed.
 
+  Check Vth.
+
+  (*2.10*)
+  Definition finite_dimensional (V : Type) (H__vectorspace : )
 
 End SPAN.
 
@@ -469,3 +457,49 @@ Section LINEAR_INDEPENDENCE.
     unfold linearly_independent in H.
     unfold spans, span in H0.
   Admitted.
+
+  Lemma fold_commute {n : nat} {a__k : t F n} {xs : t V n} {l : F} :
+    fold_left vadd 0 (map (vsmult l) (zipwith vsmult a__k xs)) = vsmult l (fold_left vadd 0 (zipwith vsmult a__k xs)).
+  Proof.
+    generalize dependent a__k.
+    induction xs; intros a__k.
+    - specialize (nil_unique a__k); intros.
+      rewrite H.
+      simpl.
+      symmetry.
+      apply number_times_zero with (r0 := r0) (r1 := r1) (radd := radd) (rmul := rmul)
+                                   (rsub := rsub) (ropp := ropp) (req := req) (rdiv := rdiv)
+                                   (rinv := rinv) (vadd := vadd) (veq := veq); give_up.
+    - simpl.
+  Admitted.
+
+  Lemma factor_out_scalar {n : nat} {a__k : t F n} {xs : t V n} : forall (l : F) (H__l : l <> 0%fieldsc),
+      fold_left vadd 0 (map (vsmult l) (zipwith vsmult a__k xs)) = 0 ->
+      fold_left vadd 0 (zipwith vsmult a__k xs) = 0.
+  Proof.
+    intros l H__l H__xsl.
+    rewrite fold_commute in H__xsl.
+    Admitted.
+
+  (*exercise 2.A.8*)
+  Theorem scalar_ind {n : nat} :
+    forall (l : F) (H__l : l <> 0%fieldsc) (xs : t V n) (H__xs : linearly_independent xs),
+      linearly_independent (map (vsmult l) xs).
+  Proof.
+    intros l H__l xs H__xs.
+    unfold linearly_independent in *.
+    intros b__k H__lx.
+    specialize (H__xs b__k).
+  Admitted.
+
+
+  (*exercise 2.A.9*)
+  (*This is actually false, counterexample is v = [2,0], [0,1] and w = [1, 2], [3, 1]*)
+  Theorem sum_ind {n : nat} : forall (xs ys : t V n) (H__xs : linearly_independent xs) (H__ys : linearly_independent ys),
+      linearly_independent (zipwith vadd xs ys).
+  Proof.
+    intros xs ys H__xs H__ys.
+    unfold linearly_independent in *.
+    intros b__k H__xys.
+    specialize (H__xs b__k).
+    apply H__xs.
