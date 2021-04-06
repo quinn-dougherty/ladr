@@ -163,7 +163,10 @@ Module Type VECTORSPACE.
   Lemma subtract_both_sides (u v w : V) : w +v u = w +v v -> u = v.
   Proof.
     intros.
-  Admitted.
+    destruct Vth.
+    pose proof (vadd_inv0 w) as [winv Hw].
+    congruence.
+  Qed.
 
   (*1.29*)
   Theorem zero_times_vector (x : V) :
@@ -177,16 +180,20 @@ Module Type VECTORSPACE.
     destruct vadd_inv0 as [y vadd_inv0].
     rewrite <- vadd_inv0.
     apply (add_both_sides _ _ (0%fieldsc *v x)).
-
-  Admitted.
+    congruence.
+  Qed.
 
   (*1.30*)
   Theorem number_times_zero (a : F) :
     a *v 0 = 0.
   Proof.
     destruct Vth.
-
-  Admitted.
+    replace 0 with (0 +v 0) at 1 by congruence.
+    rewrite vdistr3.
+    pose proof (vadd_inv0 (a *v 0)) as [ainv Ha].
+    apply subtract_both_sides with (w := ainv).
+    congruence.
+  Qed.
 
   Theorem vsmult_distr (a b : F) (x : V) : a *v (b *v x) = (a *r b) *v x.
   Proof.
